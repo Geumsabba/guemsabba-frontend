@@ -1,9 +1,8 @@
-import Main from "./Main";
-import "./main.css";
+import Landing from "./pages/Landing";
 
 function App() {
   return (
-    <Main />
+    <Landing />
   )
 }
 
