@@ -1,0 +1,151 @@
+*
+{       
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+
+section   
+{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #4A55A2;
+}
+  
+header
+{
+    margin-top: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0px 11px 819px;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    gap: 40px;
+}
+
+header ul
+{
+    position: relative;
+    display: flex;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    gap: 40px;
+}
+header ul li
+{
+    list-style: none;
+}
+header ul li a
+{
+    display: inline-block;
+    color:  #fff;
+    margin-left: 40px;
+    text-decoration: none; 
+    font-family: Inter; 
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.36px;
+    
+}
+
+.content
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .textBox
+{
+    position: relative;
+    max-width: 600px;
+}
+
+.content .textBox h1
+{
+    color:  #C5DFF8;
+    font-size: 4em;
+    line-height: 1.4em;
+    font-family: Amiko;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;   
+    line-height: 80px;
+    margin-bottom: 24px;
+}
+
+.content .textBox h1 span
+{
+    color: #fff;
+    font-weight: 900;
+}
+
+.content .textBox p 
+{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: #fff;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 133.333% */
+    letter-spacing: -0.48px;
+
+}
+
+.content .button a
+{
+    display: inline-flex;
+    margin-top: 20px;
+    padding: 20px 24px;
+
+    background: #C5DFF8;
+    color: #303031;
+    border-radius: 8px;
+
+    font-family: ABeeZee;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 133.333% */
+    letter-spacing: 1px;
+    text-decoration: none;
+
+
+}
+
+.content .imgBox
+{
+    margin-right: 46px;
+    width: 754px;
+    height: 319px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
