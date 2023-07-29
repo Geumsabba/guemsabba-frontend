@@ -67,6 +67,15 @@ header ul li a
     
 }
 
+header ul li a:focus {
+    outline: none;
+}
+
+header ul li a:hover {
+    color: #C5DFF8;
+}
+
+
 .content
 {
     position: relative;
@@ -134,8 +143,15 @@ header ul li a
     line-height: 24px; /* 133.333% */
     letter-spacing: 1px;
     text-decoration: none;
+}
 
+.content .button a:focus {
+    outline: none;
+}
 
+.content .button a:hover {
+    background-color: #A0BFE0;
+    color: #303031;
 }
 
 .content .imgBox
