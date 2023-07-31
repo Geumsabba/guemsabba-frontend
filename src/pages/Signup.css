@@ -1,0 +1,122 @@
+/* SignUp.css */
+.signup-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.site-logo {
+    width: 200px;
+    height: 100px;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+
+.account-section,
+.info-section,
+.specific-section {
+    margin-bottom: 40px;
+}
+
+.section-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    color: #333333;
+}
+
+.sub-text {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #666666;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'] {
+    width: 610px;
+    height: 56px;
+    padding: 10px;
+    margin-bottom: 24px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 14px;
+    
+}
+
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='email']:focus {
+    outline: none;
+    border-color: #2185d0; /* Change the border color when focused */
+    border-width: 2px;
+    /*box-shadow: 0 0 1px #2185d0; !* Add a blue box shadow when focused *!*/
+}
+
+input[type='password'] {
+    width: 300px;
+    margin-right: 10px;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 95%;
+}
+
+input::-moz-placeholder {
+    font-size: 95%;
+}
+
+input:-ms-input-placeholder {
+    font-size: 95%;
+}
+
+input:-moz-placeholder {
+    font-size: 95%;
+}
+
+input::placeholder {
+    font-size: 95%;
+}
+
+.dob-input-container,
+.gender-container,
+.citizenship-container,
+.location-container,
+.interest-container {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.location-container input[type='text'] {
+    width: 80px;
+    margin-right: 10px;
+}
+
+
+/*css for flex direction row*/
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/*css for flex direction column*/
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
