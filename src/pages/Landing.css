@@ -2,10 +2,10 @@
 {       
     margin: 0;
     padding: 0;
-    box-sizing: border-box;   
+    box-sizing: border-box;  
 }
 
-section   
+section 
 {
     position: relative;
     width: 100%;
@@ -16,7 +16,18 @@ section
     align-items: center;
     background: #4A55A2;
 }
-  
+
+
+/* fade-in 효과 적용 */
+.content {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+}
+
 header
 {
     margin-top: 40px;
@@ -76,7 +87,7 @@ header ul li a:hover {
 }
 
 
-.content
+.first .content
 {
     position: relative;
     width: 100%;
@@ -85,13 +96,13 @@ header ul li a:hover {
     align-items: center;
 }
 
-.content .textBox
+.first .content .textBox
 {
     position: relative;
     max-width: 600px;
 }
 
-.content .textBox h1
+.first .content .textBox h1
 {
     color:  #C5DFF8;
     font-size: 4em;
@@ -104,17 +115,18 @@ header ul li a:hover {
     margin-bottom: 24px;
 }
 
-.content .textBox h1 span
+.first .content .textBox h1 span
 {
     color: #fff;
-    font-weight: 900;
+    font-weight: 700;
 }
 
-.content .textBox p 
+.first .content .textBox p 
 {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
+
 
     color: #fff;
     font-family: Inter;
@@ -126,14 +138,14 @@ header ul li a:hover {
 
 }
 
-.content .button a
+.first .content .button a
 {
     display: inline-flex;
     margin-top: 20px;
     padding: 20px 24px;
 
     background: #C5DFF8;
-    color: #303031;
+    color: #4A55A2;;
     border-radius: 8px;
 
     font-family: ABeeZee;
@@ -145,16 +157,16 @@ header ul li a:hover {
     text-decoration: none;
 }
 
-.content .button a:focus {
+.first .content .button a:focus {
     outline: none;
 }
 
-.content .button a:hover {
+.first .content .button a:hover {
     background-color: #A0BFE0;
     color: #303031;
 }
 
-.content .imgBox
+.first .content .imgBox
 {
     margin-right: 46px;
     width: 754px;
@@ -164,4 +176,235 @@ header ul li a:hover {
     justify-content: flex-end;
     padding-right: 50px;
     margin-top: 50px;
+}
+
+
+/*2번쨰*/
+.second .content
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    justify-content: space-between;
+}
+
+.seccond .content .imgBox
+{
+    margin-right: 46px;
+    width: 754px;
+    height: 319px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+
+.seccond .content .textBox
+{
+    position: relative;
+    max-width: 608px;
+    display: inline-flex;
+    justify-content: flex-end;
+}
+
+.second .content .textBox h1
+{
+    color: #C5DFF8;
+    text-align: right;
+    font-family: Amiko;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 80px; /* 125% */
+    margin-bottom: 24px;
+}
+
+.content .textBox h1 span
+{
+    color: #fff;
+    font-weight: 700;
+}
+
+.second .content .button a
+{
+    display: inline-flex;
+    margin-top: 20px;
+    padding: 20px 24px;
+
+    background: #C5DFF8;
+    color: #4A55A2;;
+    border-radius: 8px;
+
+    font-family: ABeeZee;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 133.333% */
+    letter-spacing: 1px;
+    text-decoration: none;
+    align-self: flex-end;
+}
+
+.second .content .button a:focus {
+    outline: none;
+}
+
+.second .content .button a:hover {
+    background-color: #A0BFE0;
+    color: #303031;
+}
+
+
+/*3번쨰*/
+.third .content
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.third .content .textBox
+{
+    position: relative;
+    max-width: 600px;
+}
+
+.third .content .textBox h1
+{
+    color:  #C5DFF8;
+    font-size: 4em;
+    line-height: 1.4em;
+    font-family: Amiko;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;   
+    line-height: 80px;
+    margin-bottom: 24px;
+}
+
+.third .content .textBox h1 span
+{
+    color: #fff;
+    font-weight: 700;
+}
+
+.third .content .button a
+{
+    display: inline-flex;
+    margin-top: 20px;
+    padding: 20px 24px;
+
+    background: #C5DFF8;
+    color: #4A55A2;;
+    border-radius: 8px;
+
+    font-family: ABeeZee;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 133.333% */
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.third .content .button a:focus {
+    outline: none;
+}
+
+.third .content .button a:hover {
+    background-color: #A0BFE0;
+    color: #303031;
+}
+
+.third .content .imgBox
+{
+    margin-right: 46px;
+    width: 754px;
+    height: 319px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+
+/*4번쨰*/
+.forth .content
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    justify-content: space-between;
+}
+
+.forth .content .imgBox
+{
+    margin-right: 46px;
+    width: 754px;
+    height: 319px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+
+.forth .content .textBox
+{
+    position: relative;
+    max-width: 600px;
+}
+
+.forth .content .textBox h1
+{
+    color: #C5DFF8;
+    text-align: right;
+    font-family: Amiko;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 80px; /* 125% */
+    margin-bottom: 24px;
+}
+
+.content .textBox h1 span
+{
+    color: #fff;
+    font-weight: 700;
+}
+
+
+.forth .content .button a
+{
+    display: inline-flex;
+    margin-top: 20px;
+    padding: 20px 24px;
+
+    background: #C5DFF8;
+    color: #4A55A2;
+    border-radius: 8px;
+
+    font-family: ABeeZee;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 133.333% */
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.forth .content .button a:focus {
+    outline: none;
+}
+
+.forth .content .button a:hover {
+    background-color: #A0BFE0;
+    color: #303031;
 }
