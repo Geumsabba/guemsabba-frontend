@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import "./Landing.css";
+import { Link } from 'react-router-dom';
 import mainlogo from './mainlogo.png';
+import landinglogo1 from './landinglogo1.png';
+import landinglogo2 from './landinglogo2.png';
+import landinglogo3 from './landinglogo3.png';
 
 export default function Landing() {
   /* content에 fade-in */
@@ -21,7 +25,7 @@ export default function Landing() {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, []);  
 
   return (
     <div className='fullpage'>
@@ -29,8 +33,8 @@ export default function Landing() {
         <header>
           <ul>
             <li><a href="#">맞춤형 지원금</a></li>
-            < li><a href="#">맞춤형 재테크</a></li>
-            <li><a href="#">맞춤형 금융지식</a></li>
+            <li><a href="#">맞춤형 재테크</a></li>
+            <li><Link to='/Newsletter'>맞춤형 금융지식</Link></li>
             <li><a href="#">회원가입</a></li>
           </ul>
         </header>
@@ -55,7 +59,7 @@ export default function Landing() {
       <section className='second'>
        <div className="content">
         <div className="imgBox">
-          <img src={mainlogo} className="guemsabba" alt="main logo" />
+          <img src={landinglogo1} className="guemsabba" alt="main logo" />
         </div>
         <div className="textBox">
           <h1>
@@ -81,7 +85,7 @@ export default function Landing() {
             </div>
           </div>
           <div className="imgBox">
-            <img src={mainlogo} className="guemsabba" alt="main logo" />
+            <img src={landinglogo2} className="guemsabba" alt="main logo" />
           </div>
         </div>
       </section>
@@ -89,7 +93,7 @@ export default function Landing() {
       <section className='forth'>
       <div className="content">
         <div className="imgBox">
-          <img src={mainlogo} className="guemsabba" alt="main logo" />
+          <img src={landinglogo3} className="guemsabba" alt="main logo" />
         </div>
         <div className="textBox">
           <h1>

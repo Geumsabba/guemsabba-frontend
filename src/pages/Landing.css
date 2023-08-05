@@ -5,6 +5,11 @@
     box-sizing: border-box;  
 }
 
+/* 화면에서 스크롤바 안보이게 */
+::-webkit-scrollbar {   
+    display: none;
+}
+
 section 
 {
     position: relative;
@@ -28,10 +33,11 @@ section
     opacity: 1;
 }
 
+/* nav */
 header
 {
     margin-top: 40px;
-    position: absolute;
+    position: absolute; /* absolute로 하면 상단에 고정 */ 
     top: 0;
     left: 0;
     width: 100%;
@@ -59,10 +65,12 @@ header ul
     display: flex;
     gap: 40px;
 }
+
 header ul li
 {
     list-style: none;
 }
+
 header ul li a
 {
     display: inline-block;
@@ -74,9 +82,33 @@ header ul li a
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    letter-spacing: -0.36px;
-    
+    letter-spacing: -0.36px;    
 }
+
+header ul li b
+{
+    display: inline-block;
+    color: #C5DFF8;
+    margin-left: 40px;
+    text-decoration: none; 
+    font-family: Inter; 
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.36px;    
+}
+
+header ul li:last-child a {
+    color: #C5DFF8; 
+    font-family: Inter; 
+    font-size: 18px; 
+    font-style: normal; 
+    font-weight: 700; 
+    line-height: normal; 
+    letter-spacing: -0.36px; 
+    text-decoration: none; 
+  }
 
 header ul li a:focus {
     outline: none;
@@ -86,7 +118,11 @@ header ul li a:hover {
     color: #C5DFF8;
 }
 
+header ul li:last-child a:hover {
+    color: #A0BFE0; 
+  }
 
+/* content */
 .first .content
 {
     position: relative;
@@ -193,13 +229,13 @@ header ul li a:hover {
 .seccond .content .imgBox
 {
     margin-right: 46px;
-    width: 754px;
-    height: 319px;
+    width: 383px;
+    height: 385px;
     flex-shrink: 0;
-    display: flex;
-    justify-content: flex-end;
     padding-right: 50px;
     margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .seccond .content .textBox
@@ -246,6 +282,7 @@ header ul li a:hover {
     letter-spacing: 1px;
     text-decoration: none;
     align-self: flex-end;
+    margin-left: 800px;
 }
 
 .second .content .button a:focus {
@@ -346,12 +383,12 @@ header ul li a:hover {
 
 .forth .content .imgBox
 {
-    margin-right: 46px;
+    margin-left: 46px;
     width: 754px;
     height: 319px;
     flex-shrink: 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding-right: 50px;
     margin-top: 50px;
 }
@@ -398,6 +435,7 @@ header ul li a:hover {
     line-height: 24px; /* 133.333% */
     letter-spacing: 1px;
     text-decoration: none;
+    margin-left: 250px;
 }
 
 .forth .content .button a:focus {
