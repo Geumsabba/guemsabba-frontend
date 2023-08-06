@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Navbar from './Navbar';
-import './Signup.css';
+import './Login.css';
 import logo from './mainlogo2.png';
 import titleTextImg from './Title.png';
 import Select from 'react-select';
@@ -9,7 +9,7 @@ import number1 from '../img/Group 3.png';
 import number2 from '../img/Group 4.png';
 import number3 from '../img/Group 5.png';
 
-const SignUp = () => {
+const Login = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [formData, setFormData] = useState({
     nickname: '',
@@ -60,7 +60,7 @@ const SignUp = () => {
       <Navbar/>
       <div className="signup-container">
         <div className={"blank1"}></div>
-        <div className="header">회원가입</div>
+        <div className="header">로그인</div>
         <div className={"blank1"}></div>
         <div className={"flex-row"}>
           {/* 계정생성 */}
@@ -73,17 +73,10 @@ const SignUp = () => {
                   //style width 10px
                   style={{width: '20px'}}
                   src={number1}></img>
-                <span className="section-header">계정생성</span>
+                <span className="section-header">로그인</span>
               </span>
-              <div className="section-disc">계정을 만들어주세요:)</div>
+              <div className="section-disc">로그인 해주세요:)</div>
               <div className={"blank1"}></div>
-              <div className="sub-text">*닉네임</div>
-              <input
-                type="text"
-                placeholder="닉네임"
-                value={formData.nickname}
-                onChange={(e) => setFormData({...formData, nickname: e.target.value})}
-              />
               <div className="sub-text">*아이디</div>
               <input
                 type="text"
@@ -96,18 +89,10 @@ const SignUp = () => {
                   <div className="sub-text">*비밀번호</div>
                   <input
                     type="password"
+                    style={{width: 610}}
                     placeholder="비밀번호를 입력해주세요."
                     value={formData.password}
                     onChange={(e) => setFormData({...formData, password: e.target.value})}
-                  />
-                </div>
-                <div className="flex-column">
-                  <div className="sub-text">*비밀번호 확인</div>
-                  <input
-                    type="password"
-                    placeholder="비밀번호를 한번 더 입력해주세요."
-                    value={formData.confirmPassword}
-                    onChange={(e) => setFormData({...formData, confirmPassword: e.target.value})}
                   />
                 </div>
               </div>
@@ -314,4 +299,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Login;

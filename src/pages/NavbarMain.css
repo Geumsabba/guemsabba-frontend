@@ -3,7 +3,7 @@
     display: none;
 }
 
-.navbar {
+.navbar-main {
     position: fixed;
     top: 0;
     left: 0;
@@ -14,7 +14,7 @@
     align-items: center;
     background-color: #ffffff;
     border-bottom: 1px solid #c2c2c2; /* Add black border at the bottom */
-    padding: 0px 50px;
+    padding: 0 50px;
 }
 
 

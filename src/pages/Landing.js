@@ -47,7 +47,7 @@ export default function Landing() {
             </h1>
             <p>내용입력</p>
             <div className="button">
-              <a href="#">로그인 하기</a>
+              <a href="/signup">로그인 하기</a>
             </div>
           </div>
           <div className="imgBox">

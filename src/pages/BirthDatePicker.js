@@ -18,49 +18,58 @@ const BirthDatePicker = () => {
 
   return (
     <div className="birth-date-picker">
-      <Select
-        styles={{
-          control: (provided, state) => ({
-            ...provided,
-            background: '#fff',
-            borderColor: '#ccc',
-            minHeight: '66px',
-            height: '66px',
-            borderRadius: 12,
-          }),
-          indicatorSeparator: state => ({
-            display: 'none',
-          }),
-        }}
-        options={years} placeholder="년도" className="select"/>
-      <Select
-        styles={{
-          control: (provided, state) => ({
-            ...provided,
-            background: '#fff',
-            borderColor: '#ccc',
-            minHeight: '66px',
-            height: '66px',
-            borderRadius: 12,
-          }),
-          indicatorSeparator: state => ({
-            display: 'none',
-          }),
-        }}        options={months} placeholder="월" className="select"/>
-      <Select
-        styles={{
-          control: (provided, state) => ({
-            ...provided,
-            background: '#fff',
-            borderColor: '#ccc',
-            minHeight: '66px',
-            height: '66px',
-            borderRadius: 12,
-          }),
-          indicatorSeparator: state => ({
-            display: 'none',
-          }),
-        }}        options={days} placeholder="일" className="select"/>
+      <div>
+        <div style={{height: 25}}>년도</div>
+        <Select
+          styles={{
+            control: (provided, state) => ({
+              ...provided,
+              background: '#fff',
+              borderColor: '#ccc',
+              minHeight: '66px',
+              height: '66px',
+              borderRadius: 12,
+            }),
+            indicatorSeparator: state => ({
+              display: 'none',
+            }),
+          }}
+          options={years} placeholder="년도" className="select"/>
+      </div>
+      <div>
+        <div style={{height: 25}}>월</div>
+        <Select
+          styles={{
+            control: (provided, state) => ({
+              ...provided,
+              background: '#fff',
+              borderColor: '#ccc',
+              minHeight: '66px',
+              height: '66px',
+              borderRadius: 12,
+            }),
+            indicatorSeparator: state => ({
+              display: 'none',
+            }),
+          }} options={months} placeholder="월" className="select"/>
+      </div>
+      <div>
+        <div style={{height: 25}}>일</div>
+        <Select
+          styles={{
+            control: (provided, state) => ({
+              ...provided,
+              background: '#fff',
+              borderColor: '#ccc',
+              minHeight: '66px',
+              height: '66px',
+              borderRadius: 12,
+            }),
+            indicatorSeparator: state => ({
+              display: 'none',
+            }),
+          }} options={days} placeholder="일" className="select"/>
+      </div>
     </div>
   );
 };

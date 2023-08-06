@@ -60,7 +60,7 @@ const NavbarMain = () => {
 
 
   return (
-    <nav className="navbar">
+    <nav className="navbar-main">
       <div className="left-container"> 
         <button className="main-button"> 
           <div className='home'>
