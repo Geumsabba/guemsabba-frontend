@@ -37,7 +37,7 @@ section
 header
 {
     margin-top: 40px;
-    position: absolute; /* absolute로 하면 상단에 고정 */ 
+    position: fixed; /* absolute로 하면 상단에 고정 */ 
     top: 0;
     left: 0;
     width: 100%;
@@ -47,6 +47,7 @@ header
     align-items: center;
     display: flex;
     gap: 40px;
+    background: #4A55A2;
 }
 
 header ul
@@ -126,10 +127,10 @@ header ul li:last-child a:hover {
 .first .content
 {
     position: relative;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .first .content .textBox
@@ -391,6 +392,18 @@ header ul li:last-child a:hover {
     justify-content: flex-start;
     padding-right: 50px;
     margin-top: 50px;
+}
+
+.forth .content .imgBox .guemsabba4
+{
+    width: 350px;
+    height: 267px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 50px;
+    margin-top: 130px;
+    margin-left: -100px;
 }
 
 .forth .content .textBox

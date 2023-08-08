@@ -1,18 +1,16 @@
 .dropdown-menu {
-    width:100px;
     position: absolute;
     list-style: none;
     text-align: start;
     display: flex;
     flex-direction: column;
-    margin-left: 200px;
-    margin-top: 30px;
 }
 
 .dropdown-menu li {
     background: #fff;
     cursor: pointer;
     padding: 5px;
+    white-space: nowrap;
 }
 
 .dropdown-menu li:hover {

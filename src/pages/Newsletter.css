@@ -1,0 +1,226 @@
+.Newsletter-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 103px;
+    overflow-y: auto;
+}
+
+.banner {
+    width: 100%;
+    height: 316px;
+    flex-shrink: 0;
+    background-color: #4A55A2;
+/*     justify-content: space-between; */
+    position: relative;
+}
+
+
+.banner .content {
+    width: 100%;
+    height: 316px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+    overflow: hidden;
+    opacity: 0.8;
+}
+
+.banner .content .imgBox
+{
+    width: 700px;
+    height: 415px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    filter: blur(2px); /* 3px */
+}
+
+.banner .content .imgBox .guemsabba
+{
+    width: 700px;
+    height: 415px;
+    flex-shrink: 0;
+    margin-left: 30px;
+}
+
+.banner .content .imgBox .guemsabba4
+{
+    width: 689px;
+    height: 600px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: -150px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.banner .textBox {
+    margin-right: 113px;
+}
+
+.banner .textBox h1
+{
+    color: #FFF;
+    text-align: right;
+    font-family: Poppins;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 24px;
+    margin-right: 20px;
+}
+
+.banner .content .textBox .textBox2
+{
+    margin-left: 40px;
+}
+
+.banner .content a {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.48px;
+    text-decoration: none;
+    margin-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+/* bottom */
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    position: relative;
+    width: 100%;
+
+}
+
+.bottom .search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 670px;
+    height: 60px;
+    gap: 6px;
+    flex-shrink: 0;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    position: relative;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.bottom .search-box input {
+    width: 100%;
+    height: 100%;
+    margin-left: 5px;
+    margin-top: 23px;
+    border: none;
+    outline: none;
+}
+
+.bottom .search-box .icon{
+    margin-right: 20px;
+    color: #979797;
+}
+
+form.box input[type=text]::placeholder {
+    color: gray;
+    box-shadow: none;
+}
+
+
+.categorie-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+    display: flex;
+    padding: 23px 32px;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.categorie-item a {
+    display: flex;
+    padding: 23px 32px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 12px;
+    background: var(--gray, #FAFAFA);
+
+    color: #4A55A2;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    /* H5 */
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+    text-decoration: none; 
+}
+
+
+.categorie-item a:focus {
+    outline: none;
+}
+
+.categorie-item a:hover {
+    background-color: whitesmoke;
+    color: #303031;
+}
+
+
+/* mainContainer */
+.mainContainer {
+    flex: 1;
+    height: auto;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 500px);
+    grid-auto-rows: 10px;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.mainContainer .pin {
+    border-radius: 16px;
+    background: #444;
+    margin: 5px;
+    position: relative;
+}
+
+
+.mainContainer .pin.small {
+    grid-row-end: span 15;
+}
+
+.mainContainer .pin.medium {
+    grid-row-end: span 20;
+}
+
+.mainContainer .pin.large {
+    grid-row-end: span 25;
+}
+
