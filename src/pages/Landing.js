@@ -33,7 +33,7 @@ export default function Landing() {
       <section className='first'>
         <header>
           <ul>
-            <li><a href="#">맞춤형 지원금</a></li>
+            <li><a href="/home">맞춤형 지원금</a></li>
             <li><a href="#">맞춤형 재테크</a></li>
             <li><Link to='/Newsletter'>맞춤형 금융지식</Link></li>
             <li><a href="#">회원가입</a></li>
