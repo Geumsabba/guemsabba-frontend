@@ -7,6 +7,7 @@ import landinglogo2 from './landinglogo2.png';
 import landinglogo3 from './landinglogo3.png';
 import landinglogo4 from './landinglogo4.png';
 
+
 export default function Landing() {
   /* content에 fade-in */
   useEffect(() => {
@@ -19,6 +20,7 @@ export default function Landing() {
         }
       });
     });
+    
 
     const sectionElements = document.querySelectorAll('.content');
     sectionElements.forEach((el) => observer.observe(el));
@@ -27,6 +29,8 @@ export default function Landing() {
       observer.disconnect();
     };
   }, []);  
+
+  
 
   return (
     <div className='fullpage'>
