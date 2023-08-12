@@ -297,7 +297,6 @@ export const NewsLetterWriter = styled.div`
 `;
 
 
-
 export const ThreeColContainer = styled.div`
   display: flex;
   flex-direction: row;

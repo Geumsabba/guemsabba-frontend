@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;  
+
 }
 
 /* 화면에서 스크롤바 안보이게 */
@@ -10,9 +11,17 @@
     display: none;
 }
 
+.fullpage
+{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
 section 
 {
-    position: relative;
+    position: absolute;
     width: 100%;
     min-height: 100vh;
     padding: 100px;
@@ -20,6 +29,14 @@ section
     justify-content: space-between;
     align-items: center;
     background: #4A55A2;
+
+    transition: bottom .7s;
+    bottom: -100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 
 /* fade-in 효과 적용 */
@@ -46,7 +63,16 @@ header
     align-items: center;
     display: flex;
     gap: 40px;
-    background: #4A55A2;
+    background: transparent;
+    z-index: 100;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 103px;
+
+
 }
 
 header ul
@@ -123,6 +149,10 @@ header ul li:last-child a:hover {
   }
 
 /* content */
+.first
+{
+    bottom: 0;
+}
 .first .content
 {
     position: relative;

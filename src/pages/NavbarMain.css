@@ -50,6 +50,8 @@ button.imgBox {
     background: none; /* Optional: To make the button transparent */
     align-items: center;
     margin-bottom: 12px;
+    margin-right: 40px;
+    cursor: pointer;
   }
   
 .logo_white {
@@ -58,8 +60,13 @@ button.imgBox {
     object-fit: cover;
   }
 
+
+/* dropdown */
 .dropdown-container {
     position: relative;
+    display: flex;
+    padding: 10px;
+    align-items: center;
 }
 
 .dropdown-container ul 
@@ -67,7 +74,7 @@ button.imgBox {
     display: inline-flex;
     align-items: center;
     display: flex;
-    gap: 40px;
+    gap: 60px;
 }
 
 .dropdown-container ul li
@@ -79,7 +86,8 @@ button.imgBox {
 {
     display: inline-block;
     color:  #252C32;
-    margin-left: 40px;
+    margin-left: 10px;
+
     text-decoration: none; 
     font-family: Inter;
     font-size: 14px;
@@ -95,6 +103,10 @@ button.imgBox {
 
 .dropdown-container li:hover {
     background-color: whitesmoke;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    border-radius: 8px;
 }
 
 

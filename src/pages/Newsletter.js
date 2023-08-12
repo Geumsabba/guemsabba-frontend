@@ -2,11 +2,30 @@ import React, { useState } from 'react';
 import Navbarmain from './NavbarMain';
 import landinglogo3 from './landinglogo3.png';
 import landinglogo4 from './landinglogo4.png';
+import { Link } from 'react-router-dom';
 import './Newsletter.css';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
-import Pin from './Pin';
+
+import {
+  NewsLetterWrapper,
+  NewsLetterImg,
+  NewsLetterTitle,
+  NewsLetterContent,
+  OneRowContainer,
+  ThreeColContainer,
+  NewsLetterWriter
+} from "./NewsletterStyle";
+
+
+import placeholder from "../img/placeholder.png"
+import placeholder2 from "../img/placeholder2.png"
+import placeholder3 from "../img/placeholder3.png"
+import placeholder4 from "../img/placeholder4.png"
+import placeholder5 from "../img/placeholder5.png"
+import placeholder6 from "../img/placeholder6.png"
+
 
 function Newsletter() {
   const [inputValue, setInputValue] = useState('');
@@ -62,9 +81,9 @@ function Newsletter() {
           </div>
         </div>
 
-        {/* mainContainer */}
-        <div className='mainContainer'>
-          <Pin pinSize = {'small'}/>
+  {/* mainContainer */}
+{/*         <div className='mainContainer'>
+          <Link to='/NewsletterContents'><Pin pinSize = {'small'}/>
           <Pin pinSize = {'medium'}/>
           <Pin pinSize = {'large'}/>
           <Pin pinSize = {'small'}/>
@@ -75,8 +94,149 @@ function Newsletter() {
           <Pin pinSize = {'large'}/>
           <Pin pinSize = {'small'}/>
           <Pin pinSize = {'medium'}/>
-          <Pin pinSize = {'large'}/>
+          <Pin pinSize = {'large'}/> 
         </div>
+ */}
+
+        <div className='NewsLetterStyle'>
+          {/*뉴스레터 10개 생성 -> NewsletterStyle.js */}
+          <ThreeColContainer>
+            <OneRowContainer>
+              <NewsLetterWrapper>
+              <Link to="/NewsletterContents">
+                <NewsLetterImg src={placeholder}/>
+              </Link>
+                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
+                <NewsLetterWriter>
+                  edit: 명시은
+                </NewsLetterWriter>
+                <NewsLetterContent>
+                  간단한 설명 와라라랄랄
+                </NewsLetterContent>
+              </NewsLetterWrapper>
+
+              <div style={{width: 52}}></div>
+
+              <NewsLetterWrapper>
+                <Link to='/NewsletterContents'>
+                <NewsLetterImg src={placeholder2}/>
+                </Link>
+                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
+                <NewsLetterWriter>
+                  edit: 명시은
+                </NewsLetterWriter>
+                <NewsLetterContent>
+                간단한 설명 와라라랄랄<br />
+                간단한 설명  와라라랄랄간단한 설명 와라라랄랄<br />
+                간단한 설명 와라라랄랄<br />
+                간단한 설명 와라라랄랄<br />
+                간단한 설명 와라라랄랄
+                </NewsLetterContent>
+              </NewsLetterWrapper>
+
+              <div style={{width: 52}}></div>
+
+              <NewsLetterWrapper>
+                <NewsLetterImg src={placeholder3}/>
+                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
+                <NewsLetterWriter>
+                  edit: 명시은
+                </NewsLetterWriter>
+                <NewsLetterContent>
+                간단한 설명 와라라랄랄<br />
+                간단한 설명 와라라랄랄간단한 설명 와라라랄랄<br />
+                간단한 설명 와라라랄랄<br />
+                </NewsLetterContent>
+              </NewsLetterWrapper>
+            </OneRowContainer>
+
+            <OneRowContainer>
+              <NewsLetterWrapper>
+                <NewsLetterImg src={placeholder4}/>
+                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
+                <NewsLetterWriter>
+                  edit: 명시은
+                </NewsLetterWriter>
+                <NewsLetterContent>
+                간단한 설명 와라라랄랄<br />
+                간단한 설명 와라라랄랄<br />
+                간단한 설명 와라라랄랄간단한 설명 와라라랄랄<br />
+                간단한 설명 와라라랄랄간단한 설명 와라라랄랄간단한 설명 와라라랄랄
+
+                </NewsLetterContent>
+              </NewsLetterWrapper>
+
+              <div style={{width: 52}}></div>
+
+              <NewsLetterWrapper>
+                <NewsLetterImg src={placeholder5}/>
+                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
+                <NewsLetterWriter>
+                  edit: 명시은
+                </NewsLetterWriter>
+                <NewsLetterContent>
+                  간단한 설명 와라라랄랄
+                </NewsLetterContent>
+              </NewsLetterWrapper>
+
+              <div style={{width: 52}}></div>
+
+              <NewsLetterWrapper>
+                <NewsLetterImg src={placeholder6}/>
+                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
+                <NewsLetterWriter>
+                  edit: 명시은
+                </NewsLetterWriter>
+                <NewsLetterContent>
+                간단한 설명 와라라랄랄간단한 설명 와라라랄랄<br />
+                간단한 설명 와라라랄랄
+                </NewsLetterContent>
+              </NewsLetterWrapper>
+
+              <div style={{width: 52}}></div>
+            </OneRowContainer>
+
+            <OneRowContainer>
+              <NewsLetterWrapper>
+                <NewsLetterImg src={placeholder}/>
+                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
+                <NewsLetterWriter>
+                  edit: 명시은
+                </NewsLetterWriter>
+                <NewsLetterContent>
+                  간단한 설명 와라라랄랄
+                </NewsLetterContent>
+              </NewsLetterWrapper>
+
+              <div style={{width: 52}}></div>
+
+              <NewsLetterWrapper>
+                <NewsLetterImg src={placeholder2}/>
+                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
+                <NewsLetterWriter>
+                  edit: 명시은
+                </NewsLetterWriter>
+                <NewsLetterContent>
+                  간단한 설명 와라라랄랄
+                </NewsLetterContent>
+              </NewsLetterWrapper>
+
+              <div style={{width: 52}}></div>
+
+              <NewsLetterWrapper>
+                <NewsLetterImg src={placeholder3}/>
+                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
+                <NewsLetterWriter>
+                  edit: 명시은
+                </NewsLetterWriter>
+                <NewsLetterContent>
+                  간단한 설명 와라라랄랄
+                </NewsLetterContent>
+              </NewsLetterWrapper>
+            </OneRowContainer>
+          </ThreeColContainer>
+          
+        </div> 
       </div>
     </div>   
   );

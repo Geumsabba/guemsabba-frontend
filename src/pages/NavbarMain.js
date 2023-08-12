@@ -62,12 +62,16 @@ const NavbarMain = () => {
   return (
     <nav className="navbar-main">
       <div className="left-container"> 
-        <button className="main-button"> 
+        <button className="main-button" onClick={
+          () => window.location.href = '/'
+        }>
           <div className='home'>
-            <Link to='/'><FontAwesomeIcon icon={faHouse} className="home-icon"/></Link></div>
+            <FontAwesomeIcon icon={faHouse} className="home-icon"/></div>
         </button>   
-        <button className="imgBox">
-          <Link to='/'><img src={logo_white} className="logo_white" alt="main logo" /></Link></button>
+        <button className="imgBox" onClick={
+          () => window.location.href = '/'
+        }>
+          <img src={logo_white} className="logo_white" alt="main logo" /></button>
         <div className='dropdown-container'> 
           <ul>
           <li className='dropdown2'
@@ -79,11 +83,11 @@ const NavbarMain = () => {
                className='dropdown2'
                onClick={closeMobileMenu}
               >
-                맞춤형 지원금&nbsp;<FontAwesomeIcon icon={faChevronDown}/>&nbsp;&nbsp;&nbsp;&nbsp;
+                맞춤형 지원금&nbsp;<FontAwesomeIcon icon={faChevronDown}/>
               </Link>
               {dropdown2 && <Dropdown2/>}
             </li>
-            <li><a href="#">맞춤형 재테크&nbsp;<FontAwesomeIcon icon={faChevronDown}/>&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            <li><a href="#">맞춤형 재테크&nbsp;<FontAwesomeIcon icon={faChevronDown}/></a></li>
             <li className='dropdown'
               onMouseEnter={onMouseEnter}
               onMouseLeave={onMouseLeave}
@@ -93,7 +97,7 @@ const NavbarMain = () => {
                className='dropdown'
                onClick={closeMobileMenu}
               >
-                맞춤형 금융지식&nbsp;<FontAwesomeIcon icon={faChevronDown}/>&nbsp;&nbsp;&nbsp;&nbsp;
+                맞춤형 금융지식&nbsp;<FontAwesomeIcon icon={faChevronDown}/>
               </Link>
               {dropdown && <Dropdown/>}
             </li>

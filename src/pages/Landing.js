@@ -6,7 +6,9 @@ import landinglogo1 from './landinglogo1.png';
 import landinglogo2 from './landinglogo2.png';
 import landinglogo3 from './landinglogo3.png';
 import landinglogo4 from './landinglogo4.png';
-
+/* 
+import fullpage from 'fullpage.js';
+ */
 
 export default function Landing() {
   /* content에 fade-in */
@@ -30,7 +32,48 @@ export default function Landing() {
     };
   }, []);  
 
-  
+
+/* fullpage */
+window.onload = () => {
+  const Slider = function(fullpage) {
+    let slides = [],
+        count = 0,
+        current = 0,
+        touchstart = 0,
+        animation_state = false;
+
+    const init = () => {
+      slides = fullpage.children;
+      count = slides.length;
+      for (let i = 0; i < count; i++) {
+        slides[i].style.bottom = -(i * 100) + '%';
+      }
+    }
+
+    const gotoNum = (index) => {
+      if ((index != current) && !animation_state) {
+        animation_state = true;
+        setTimeout(() => animation_state = false, 500);
+        current = index;
+        for (let i = 0; i < count; i++) {
+          slides[i].style.bottom = (current - i) * 100 + '%';
+        }
+      }
+    }
+
+    const gotoNext = () => current < count - 1 ? gotoNum(current + 1) : false;
+    const gotoPrev = () => current > 0 ? gotoNum(current - 1) : false;
+    fullpage.ontouchstart = (e) => touchstart = e.touches[0].screenY;
+    fullpage.ontouchend = (e) => touchstart < e.changedTouches[0].screenY ? gotoPrev() : gotoNext();
+    fullpage.onmousewheel = fullpage.onwheel = (e) => e.deltaY < 0 ? gotoPrev() : gotoNext();
+
+    init();
+  }
+
+  let fullpage = document.querySelector('.fullpage');
+  let slider = new Slider(fullpage);
+}
+
 
   return (
     <div className='fullpage'>
@@ -113,6 +156,8 @@ export default function Landing() {
         </div>
       </div>
       </section>
+
     </div>
   );
 }
+

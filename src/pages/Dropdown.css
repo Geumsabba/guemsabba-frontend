@@ -1,9 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .dropdown-menu {
     position: absolute;
     list-style: none;
     text-align: start;
     display: flex;
     flex-direction: column;
+    width: 200px;
+    padding: 20px;
 }
 
 .dropdown-menu li {
@@ -11,6 +18,10 @@
     cursor: pointer;
     padding: 5px;
     white-space: nowrap;
+    border-radius: 8px;
+    margin-bottom: -40px;
+    margin-right: 60px;
+
 }
 
 .dropdown-menu li:hover {
@@ -27,5 +38,5 @@
     height: 100%;
     text-decoration: none;
     color: #fff;
-    padding: 5px;
+   /*  padding: 5px; */
 }

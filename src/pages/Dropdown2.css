@@ -1,16 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .dropdown-menu2 {
     position: absolute;
     list-style: none;
     text-align: start;
     display: flex;
     flex-direction: column;
+    width: 200px;
+    padding: 20px;
 }
 
 .dropdown-menu2 li {
     background: #fff;
     cursor: pointer;
-    padding: 5px;
     white-space: nowrap;
+    padding: 5px;
+    border-radius: 8px;
+    margin-bottom: -40px;
+    margin-right: 70px;
 }
 
 .dropdown-menu2 li:hover {

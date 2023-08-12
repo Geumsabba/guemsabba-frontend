@@ -1,0 +1,345 @@
+.NewsletterContents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 103px;
+    overflow-y: auto;
+}
+
+/* banner */
+.NewsletterContents .banner {
+    width: 100%;
+    height: 316px;
+    flex-shrink: 0;
+    background-color: #4A55A2;
+/*     justify-content: space-between; */
+/*     position: relative; */
+}
+
+
+.NewsletterContents .banner .content {
+    width: 100%;
+    height: 316px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.NewsletterContents .banner .content .imgBox
+{
+    flex-shrink: 0;
+    display: flex;
+    position: relative;
+    filter: blur(0.5px); /* 3px */
+}
+
+.banner .content .imgBox .newsgroup1
+{
+    width: 2000px;
+    height: 700px;
+    flex-shrink: 0;
+    margin-top: -140px;
+/*     z-index: 100;
+    overflow: hidden;
+    opacity: 0.8; */
+}
+
+
+/*.banner .content .imgBox .guemsabba4
+{
+    width: 689px;
+    height: 600px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: -150px;
+    margin-top: 50px;
+    position: relative;
+} */
+
+.NewsletterContents .banner .textBox {
+    margin-right: 113px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;  
+    margin-left: 1200px;
+/* 
+    display: inline-flex;
+    justify-content: flex-start; */
+
+    
+
+/*     z-index: 2;
+    overflow: hidden;
+    opacity: 0.8; */
+
+/*     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left: 500px; */
+    
+}
+
+.NewsletterContents .banner .textBox h1
+{
+    color: #FFF;
+    text-align: right;
+    font-family: Poppins;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+
+}
+
+.NewsletterContents .banner .content .textBox .textBox2
+{
+    margin-left: 40px;
+}
+
+.NewsletterContents .banner .content a {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.48px;
+    text-decoration: none;
+    margin-left: 10px;
+    padding-right: 10px;
+}
+
+/* NewsletterContents */
+.NewsletterContents .Tabs
+{
+    width: 1920px;
+}
+
+.NewsletterContents .Toolbar{
+    width: 1920px;
+}
+
+/* widget */
+.widget
+{
+    display: flex;
+    padding-right: 1000px;
+}
+
+.NewsletterContents .widget .date
+{
+
+    color: #6C757D;
+    text-align: right;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+
+    margin-right: 30px;
+}
+
+.NewsletterContents .widget .editer
+{
+    color: #6C757D;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+
+    margin-right: 15px;
+}
+
+
+/* 뉴스레터 */
+.NewsletterContents .Title
+{
+    color: #4A55A2;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 100% */
+}
+
+
+/* textBox1 */
+.NewsletterContents .textbox1
+{
+    width: 956px;
+    height: 483px;
+}
+
+.NewsletterContents .header
+{
+    color: #6C757D;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25px;
+}
+
+.NewsletterContents .subheading1
+{
+    color: #4A55A2;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+}
+
+.NewsletterContents .maintext1
+{
+    color: #6C757D;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+/* imgBox1 */
+.NewsletterContents .imgBox1 .imgcontent
+{
+    width: 1918px;
+    height: 400px;
+    align-items: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    overflow: hidden; 
+}
+
+.NewsletterContents .imgBox1 .imgcontent .newsgroup1
+{
+    width: 100%;
+    height: 800px;    
+    align-items: center;
+    position: absolute;
+    display: flex;
+}
+
+/* textBox2 */
+.NewsletterContents .textbox2
+{
+    width: 956px;
+    height: 483px;
+}
+
+.NewsletterContents .subheading2
+{
+    color: #4A55A2;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+}
+
+.NewsletterContents .maintext2
+{
+    color: #6C757D;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+
+/* imgBox2 */
+.NewsletterContents .imgBox2 .imgcontent2
+{
+    width: 1918px;
+    height: 400px;
+    align-items: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.NewsletterContents .imgBox2 .imgcontent2 .newsgroup2
+{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 34px;
+
+}
+
+.NewsletterContents .imgBox2 .imgcontent2 .newsgroup3
+{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* textbox3 */
+.NewsletterContents .textbox3
+{
+    width: 956px;
+    height: 231px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.NewsletterContents .textbox3 .subheading3
+{
+    color: #4A55A2;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+}
+
+.NewsletterContents .textbox3 .maintext3
+{
+    color: #6C757D;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+.NewsletterContents .commentBox
+{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.NewsletterContents .Badge
+{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left: 500px;
+}
