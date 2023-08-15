@@ -6,6 +6,7 @@ import Newsletter from "./pages/Newsletter";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import NewsletterContents from './pages/NewsletterContents';
+import Fund from "./pages/Fund";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/home" element={<Home/>} />
         <Route path="/NewsletterContents" element={<NewsletterContents/>} />
+        <Route path="/fund" element={<Fund/>} />
       </Routes>
     </Router>
   )

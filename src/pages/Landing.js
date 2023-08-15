@@ -95,7 +95,7 @@ window.onload = () => {
             </h1>
             <p>내용입력</p>
             <div className="button">
-              <a href="/signup">로그인 하기</a>
+              <a href="/login">로그인 하기</a>
             </div>
           </div>
           <div className="imgBox">
