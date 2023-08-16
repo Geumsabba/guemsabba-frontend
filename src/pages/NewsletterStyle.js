@@ -31,11 +31,11 @@ export const NewsLetterWrapper  = styled.div.attrs(props => ({
   margin-top: 12px;
 
 
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  &.show {
-    opacity: 1;
-  }
+  //opacity: 0;
+  //transition: opacity 1s ease-in-out;
+  //&.show {
+  //  opacity: 1;
+  //}
 `;
 
 
@@ -43,7 +43,8 @@ export const NewsLetterWrapper  = styled.div.attrs(props => ({
 export const NewsLetterImg = styled.img`
   width: 100%;
   height: 265px;
-  object-fit: contain;
+  //object-fit: contain;
+  object-fit: cover;
   display: flex;
   justify-content: center;
   align-items: center;
