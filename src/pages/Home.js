@@ -40,7 +40,7 @@ import {
   KnlgImg,
   FlexRow,
   NewsLetterWrapper,
-  NewsLetterImg, NewsLetterTitle, NewsLetterContent, OneRowContainer, ThreeColContainer, NewsLetterWriter
+  NewsLetterImg, NewsLetterTitle, NewsLetterContent, OneRowContainer, ThreeColContainer, NewsLetterWriter, FlexRow2
 } from "./HomeStyle";
 import Newsletter from "./Newsletter";
 
@@ -50,10 +50,28 @@ import placeholder3 from "../img/placeholder3.png"
 import placeholder4 from "../img/placeholder4.png"
 import placeholder5 from "../img/placeholder5.png"
 import placeholder6 from "../img/placeholder6.png"
+import {Link} from "react-router-dom";
 
 
 const Home = () => {
   const [editorData, setEditorData] = useState([]);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    // Simulate fetching data from an API
+    // Replace this with your actual API endpoint
+    fetch('http://101.79.9.230:8080/geumsabba/newsletter/getall')
+    // fetch('http://localhost:8080/geumsabba/newsletter/getall')
+      .then(response => response.json())
+      .then(data => {
+          setData(data);
+          console.log('Fetched data:', data);
+          console.log('Fetched id:', data[0].id);
+        }
+      )
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
 
   useEffect(() => {
     // Fetch data from the API here
@@ -67,6 +85,7 @@ const Home = () => {
     fetchSampleData();
   }, []);
 
+  const firstItem = data[0] || {};
 
   return (
     <>
@@ -79,9 +98,9 @@ const Home = () => {
           {/*"EditorProfile" 태그 8개 생성*/}
           <EditorProfileWrapper>
             {editorData.map((editor) => (
-              <FlexCol>
+              <FlexCol key={editor.id}>
                 <EditorProfileContainer>
-                  <EditorProfile key={editor.id}>
+                  <EditorProfile>
                     <img src={editor.url} alt="Editor"/>
                   </EditorProfile>
                 </EditorProfileContainer>
@@ -91,28 +110,25 @@ const Home = () => {
           </EditorProfileWrapper>
           <ThinGrayLine/>
 
-          {/*오늘의 금사빠 뉴스레터*/}
           <BannerDiv>오늘의 금사빠 뉴스레터</BannerDiv>
           <NewsletterContainer>
-            <NewsletterLeft src={placeholder}></NewsletterLeft>
+            {typeof firstItem === 'undefined' ? (
+              <div>Loading...</div>
+            ) : (
+              <NewsletterLeft
+                src={
+                  firstItem.image1
+                    ? `data:image/png;base64,${firstItem.image1}`
+                    : placeholder
+                }
+              />
+            )}
             <ContentContainer>
-              <DateDiv>
-                2023.08.17
-              </DateDiv>
-              <TitleDiv>
-                “어쩌구 저쩌구 제목을 입력 ”
-              </TitleDiv>
-              <ContentDiv>
-                간단한 설명 와라라랄랄 간단한 설명 와라라랄랄<br/>
-                간단한 설명 와라라랄랄 간단한 설명 와라라랄랄 <br/>
-                간단한 설명 와라라랄랄 <br/>
-                간단한 설명 와라라랄랄 <br/>
-                간단한 설명 와라라랄랄 <br/>
-              </ContentDiv>
+              <DateDiv>{firstItem.date || 'YYYY.MM.DD'}</DateDiv>
+              <TitleDiv>{firstItem.title || '제목을 입력하세요'}</TitleDiv>
+              <ContentDiv>{firstItem.header || '자세한 내용을 보려면 더보기를 눌러주세요!'}</ContentDiv>
               <MoreButton>
-                <MoreDivText>
-                  Read more
-                </MoreDivText>
+                <MoreDivText>Read more</MoreDivText>
               </MoreButton>
             </ContentContainer>
           </NewsletterContainer>
@@ -136,188 +152,89 @@ const Home = () => {
 
           {/*오늘의 인기 뉴스레터*/}
           <BannerDiv>이번주 인기 뉴스레터 </BannerDiv>
-          <FlexRow>
+          <FlexRow2>
+            {data.slice(0, 3).map((item, index) => {
+              const key = `${item.id}-${index}`;
 
-            <NewsLetterWrapper>
-              <NewsLetterImg src={placeholder}/>
-              <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-              <NewsLetterWriter>
-                edit: 명시은
-              </NewsLetterWriter>
-              <NewsLetterContent>
-                {/*edit: 명시은*/}
-                <MoreButton>
-                  <MoreDivText>
-                    Read more
-                  </MoreDivText>
-                </MoreButton>
-              </NewsLetterContent>
-            </NewsLetterWrapper>
+              return (
+                <FlexRow2 key={key}>
+                  <NewsLetterWrapper>
+                    <Link to="/NewsletterContents">
+                      <NewsLetterImg src={`data:image/png;base64,${item.image1}`}/>
+                    </Link>
+                    <NewsLetterTitle>{item.title}</NewsLetterTitle>
+                    <NewsLetterWriter>edit: {item.editor}</NewsLetterWriter>
+                    <NewsLetterContent>{item.header}</NewsLetterContent>
+                  </NewsLetterWrapper>
+                  <div style={{width: 52 }}></div>
+                </FlexRow2>
 
-            <div style={{width: 52}}></div>
-
-            <NewsLetterWrapper>
-              <NewsLetterImg src={placeholder}/>
-              <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-              <NewsLetterWriter>
-                edit: 명시은
-              </NewsLetterWriter>
-              <NewsLetterContent>
-                {/*edit: 명시은*/}
-                <MoreButton>
-                  <MoreDivText>
-                    Read more
-                  </MoreDivText>
-                </MoreButton>
-              </NewsLetterContent>
-            </NewsLetterWrapper>
-
-            <div style={{width: 52}}></div>
-
-            <NewsLetterWrapper>
-              <NewsLetterImg src={placeholder}/>
-              <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-              <NewsLetterWriter>
-                edit: 명시은
-              </NewsLetterWriter>
-              <NewsLetterContent>
-                {/*edit: 명시은*/}
-                <MoreButton>
-                  <MoreDivText>
-                    Read more
-                  </MoreDivText>
-                </MoreButton>
-              </NewsLetterContent>
-            </NewsLetterWrapper>
-
-          </FlexRow>
+              );
+            })}
+          </FlexRow2>
 
           {/*<div style={{height: 40}}></div>*/}
-          <ThinGrayLine />
+          <ThinGrayLine/>
 
           {/*뉴스레터 모아보기 */}
           <BannerDiv>뉴스레터 모아보기 </BannerDiv>
-
           <ThreeColContainer>
             <OneRowContainer>
-              <NewsLetterWrapper>
-                <NewsLetterImg src={placeholder}/>
-                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-                <NewsLetterWriter>
-                  edit: 명시은
-                </NewsLetterWriter>
-                <NewsLetterContent>
-                  간단한 설명 와라라랄랄
-                  <MoreButton>
-                    <MoreDivText>
-                      Read more
-                    </MoreDivText>
-                  </MoreButton>
-                </NewsLetterContent>
-              </NewsLetterWrapper>
+              {data.map((item, index) => {
+                const key = `${item.id}-${index}`;
+                // console.log('Generated key:', key);
 
-              <NewsLetterWrapper>
-                <NewsLetterImg src={placeholder2}/>
-                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-                <NewsLetterWriter>
-                  edit: 명시은
-                </NewsLetterWriter>
-                <NewsLetterContent>
-                  간단한 설명 와라라랄랄 <br/>
-                  간단한 설명 와라라랄랄 <br/>
-                  간단한 설명 와라라랄랄 간단한 설명 와라라랄랄 <br/>
-                  간단한 설명 와라라랄랄 간단한 설명 와라라랄랄 간단한 설명 와라라랄랄 <br/>
-
-                  <MoreButton>
-                    <MoreDivText>
-                      Read more
-                    </MoreDivText>
-                  </MoreButton>
-                </NewsLetterContent>
-              </NewsLetterWrapper>
-
+                return (
+                  (index) % 3 === 0 && (
+                    <NewsLetterWrapper key={key}>
+                      <Link to="/NewsletterContents">
+                        <NewsLetterImg src={`data:image/png;base64,${item.image1}`}/>
+                      </Link>
+                      <NewsLetterTitle>{item.title}</NewsLetterTitle>
+                      <NewsLetterWriter>edit: {item.editor}</NewsLetterWriter>
+                      <NewsLetterContent>{item.header}</NewsLetterContent>
+                    </NewsLetterWrapper>
+                  )
+                );
+              })}
             </OneRowContainer>
-
             <OneRowContainer>
+              {data.map((item, index) => {
+                const key = `${item.id}-${index}`;
+                // console.log('Generated key:', key);
 
-              <NewsLetterWrapper>
-                <NewsLetterImg src={placeholder3}/>
-                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-                <NewsLetterWriter>
-                  edit: 명시은
-                </NewsLetterWriter>
-                <NewsLetterContent>
-                  간단한 설명 와라라랄랄 <br/>
-                  간단한 설명 와라라랄랄 <br/>
-                  간단한 설명 와라라랄랄 간단한 설명 와라라랄랄 <br/>
-                  간단한 설명 와라라랄랄 간단한 설명 와라라랄랄 간단한 설명 와라라랄랄 <br/>
-                  <MoreButton>
-                    <MoreDivText>
-                      Read more
-                    </MoreDivText>
-                  </MoreButton>
-                </NewsLetterContent>
-              </NewsLetterWrapper>
-
-              <NewsLetterWrapper>
-                <NewsLetterImg src={placeholder4}/>
-                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-                <NewsLetterWriter>
-                  edit: 명시은
-                </NewsLetterWriter>
-                <NewsLetterContent>
-                  간단한 설명 와라라랄랄 <br/>
-                  간단한 설명 와라라랄랄 <br/>
-                  간단한 설명 와라라랄랄 간단한 설명 와라라랄랄 <br/>
-                  간단한 설명 와라라랄랄 간단한 설명 와라라랄랄 간단한 설명 와라라랄랄 <br/>
-
-                  <MoreButton>
-                    <MoreDivText>
-                      Read more
-                    </MoreDivText>
-                  </MoreButton>
-                </NewsLetterContent>
-              </NewsLetterWrapper>
-
+                return (
+                  (index) % 3 === 1 && (
+                    <NewsLetterWrapper key={key}>
+                      <Link to="/NewsletterContents">
+                        <NewsLetterImg src={`data:image/png;base64,${item.image1}`}/>
+                      </Link>
+                      <NewsLetterTitle>{item.title}</NewsLetterTitle>
+                      <NewsLetterWriter>edit: {item.editor}</NewsLetterWriter>
+                      <NewsLetterContent>{item.header}</NewsLetterContent>
+                    </NewsLetterWrapper>
+                  )
+                );
+              })}
             </OneRowContainer>
-
             <OneRowContainer>
+              {data.map((item, index) => {
+                const key = `${item.id}-${index}`;
+                // console.log('Generated key:', key);
 
-              <NewsLetterWrapper>
-                <NewsLetterImg src={placeholder5}/>
-                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-                <NewsLetterWriter>
-                  edit: 명시은
-                </NewsLetterWriter>
-                <NewsLetterContent>
-                  간단한 설명 와라라랄랄 <br/>
-                  간단한 설명 와라라랄랄 간단한 설명 와라라랄랄 간단한 설명 와라라랄랄 <br/>
-                  <MoreButton>
-                    <MoreDivText>
-                      Read more
-                    </MoreDivText>
-                  </MoreButton>
-                </NewsLetterContent>
-              </NewsLetterWrapper>
-
-              <NewsLetterWrapper>
-                <NewsLetterImg src={placeholder6}/>
-                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-                <NewsLetterWriter>
-                  edit: 명시은
-                </NewsLetterWriter>
-                <NewsLetterContent>
-                  간단한 설명 와라라랄랄 <br/>
-                  간단한 설명 와라라랄랄 간단한 설명 와라라랄랄 간단한 설명 와라라랄랄 <br/>
-
-                  <MoreButton>
-                    <MoreDivText>
-                      Read more
-                    </MoreDivText>
-                  </MoreButton>
-                </NewsLetterContent>
-              </NewsLetterWrapper>
-
+                return (
+                  (index) % 3 === 2 && (
+                    <NewsLetterWrapper key={key}>
+                      <Link to="/NewsletterContents">
+                        <NewsLetterImg src={`data:image/png;base64,${item.image1}`}/>
+                      </Link>
+                      <NewsLetterTitle>{item.title}</NewsLetterTitle>
+                      <NewsLetterWriter>edit: {item.editor}</NewsLetterWriter>
+                      <NewsLetterContent>{item.header}</NewsLetterContent>
+                    </NewsLetterWrapper>
+                  )
+                );
+              })}
             </OneRowContainer>
           </ThreeColContainer>
 

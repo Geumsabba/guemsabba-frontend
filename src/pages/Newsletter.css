@@ -195,8 +195,8 @@ form.box input[type=text]::placeholder {
     display: flex;
     flex-direction: row;
     height: 400px;
-    width: 100%; 
-    justify-content: center; 
+    width: 100%;
+    justify-content: center;
     flex: 1;
     align-items: center;
 }

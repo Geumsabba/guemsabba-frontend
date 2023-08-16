@@ -22,9 +22,14 @@ const ContentDetails = styled.div`
   flex: 1;
 `;
 
-const Title = styled.h2`
-  margin: 0;
+const Title = styled.div`
+  position: relative;
+  width: 384px;
+  //margin: 0;
+  margin-top: 10px;
   margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 24px;
 `;
 
 const DDay = styled.div`
@@ -55,7 +60,7 @@ const Income = styled.div`
 
 const HashtagContainer = styled.div`
   display: flex;
-  margin-top: 30px;
+  margin-top: 20px;
 `;
 
 const Hashtag = styled.div`
@@ -70,8 +75,12 @@ const Hashtag = styled.div`
 const ContentBox = ({thumbnail, title, dDay, region, age, income, hashtags}) => {
   return (
     <StyledContentBox>
-      <Thumbnail src={thumbnail} alt="Thumbnail"/>
-      <ContentDetails>
+      <Thumbnail src={thumbnail} alt="Thumbnail" onClick={() => {
+        console.log('Clicked item:', title);
+      }}/>
+      <ContentDetails onClick={() => {
+        console.log('Clicked item:', title);
+      }}>
         <Title>{title}</Title>
         <DDay>{dDay}</DDay>
         <Info>
@@ -86,22 +95,6 @@ const ContentBox = ({thumbnail, title, dDay, region, age, income, hashtags}) => 
         </HashtagContainer>
       </ContentDetails>
     </StyledContentBox>
-    // <StyledContentBox>
-    //   <Thumbnail src={sampleImage} alt="Thumbnail" />
-    //   <ContentDetails>
-    //     <Title>경기도 청소년 교통비 지원 </Title>
-    //     <DDay>D-7</DDay>
-    //     <Info>
-    //       <Region>지역: 경기도</Region>
-    //       <Age>나이: 만 13세~만 23세 </Age>
-    //     </Info>
-    //     <HashtagContainer>
-    //       {hashtags.map((tag, index) => (
-    //         <Hashtag key={index}>{tag}</Hashtag>
-    //       ))}
-    //     </HashtagContainer>
-    //   </ContentDetails>
-    // </StyledContentBox>
   );
 };
 

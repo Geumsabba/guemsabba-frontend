@@ -48,13 +48,19 @@ const FundPage = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    // Simulate fetching data from an API
-    // Replace this with your actual API endpoint
-    fetch('https://api.example.com/funds')
+    // Fetching data from API
+    fetch('http://101.79.9.230:8080/geumsabba/supportfund/getall')
+    // fetch('http://localhost:8080/geumsabba/supportfund/getall')
       .then(response => response.json())
-      .then(data => setData(data))
+      .then(data => {
+          setData(data);
+          console.log('Fetched data:', data);
+          console.log('Fetched id:', data[0].id);
+        }
+      )
       .catch(error => console.error('Error fetching data:', error));
   }, []);
+
 
   return (
     <>
@@ -78,69 +84,19 @@ const FundPage = () => {
           </FilterDropdown>
         </FilterContainer>
         <ContentGrid>
-          {/* Render 12 Content Boxes */}
-          {/*{Array.from({length: 12}).map((_, index) => (*/}
-          {/*  <ContentBox key={index}>qwerqwer</ContentBox>*/}
-          {/*))}*/}
-          <ContentBox thumbnail={sampleImage}
-                      title={"경기도 청소년 교통비 지원 "}
-                      dDay={"2023. 9. 1 ~ 2023. 10. 15"} region={"지역: 경기도"}
-                      age={"나이: 만 13세~만 23세 "}
-                      income={"소득: 기준 중위 소득 70% 이하"}
-                      hashtags={["#경기도", "#교통비 지원", "#청소년"]}/>
-          <ContentBox thumbnail={sampleImage}
-                      title={"경기도 청소년 교통비 지원 "}
-                      dDay={"2023. 9. 1 ~ 2023. 10. 15"} region={"지역: 경기도"}
-                      age={"나이: 만 13세~만 23세 "}
-                      income={"소득: 기준 중위 소득 70% 이하"}
-                      hashtags={["#경기도", "#교통비 지원", "#청소년"]}/>
-          <ContentBox thumbnail={sampleImage}
-                      title={"경기도 청소년 교통비 지원 "}
-                      dDay={"2023. 9. 1 ~ 2023. 10. 15"} region={"지역: 경기도"}
-                      age={"나이: 만 13세~만 23세 "}
-                      income={"소득: 기준 중위 소득 70% 이하"}
-                      hashtags={["#경기도", "#교통비 지원", "#청소년"]}/>
-          <ContentBox thumbnail={sampleImage}
-                      title={"경기도 청소년 교통비 지원 "}
-                      dDay={"2023. 9. 1 ~ 2023. 10. 15"} region={"지역: 경기도"}
-                      age={"나이: 만 13세~만 23세 "}
-                      income={"소득: 기준 중위 소득 70% 이하"}
-                      hashtags={["#경기도", "#교통비 지원", "#청소년"]}/>
-          <ContentBox thumbnail={sampleImage}
-                      title={"경기도 청소년 교통비 지원 "}
-                      dDay={"2023. 9. 1 ~ 2023. 10. 15"} region={"지역: 경기도"}
-                      age={"나이: 만 13세~만 23세 "}
-                      income={"소득: 기준 중위 소득 70% 이하"}
-                      hashtags={["#경기도", "#교통비 지원", "#청소년"]}/>
-          <ContentBox thumbnail={sampleImage}
-                      title={"경기도 청소년 교통비 지원 "}
-                      dDay={"2023. 9. 1 ~ 2023. 10. 15"} region={"지역: 경기도"}
-                      age={"나이: 만 13세~만 23세 "}
-                      income={"소득: 기준 중위 소득 70% 이하"}
-                      hashtags={["#경기도", "#교통비 지원", "#청소년"]}/>
-          <ContentBox thumbnail={sampleImage}
-                      title={"경기도 청소년 교통비 지원 "}
-                      dDay={"2023. 9. 1 ~ 2023. 10. 15"} region={"지역: 경기도"}
-                      age={"나이: 만 13세~만 23세 "}
-                      income={"소득: 기준 중위 소득 70% 이하"}
-                      hashtags={["#경기도", "#교통비 지원", "#청소년"]}/>
-          <ContentBox thumbnail={sampleImage}
-                      title={"경기도 청소년 교통비 지원 "}
-                      dDay={"2023. 9. 1 ~ 2023. 10. 15"} region={"지역: 경기도"}
-                      age={"나이: 만 13세~만 23세 "}
-                      income={"소득: 기준 중위 소득 70% 이하"}
-                      hashtags={["#경기도", "#교통비 지원", "#청소년"]}/>
-          {/*{data.map(item => (*/}
-          {/*  <ContentBox*/}
-          {/*    key={item.id}*/}
-          {/*    thumbnail={item.thumbnail}*/}
-          {/*    title={item.title}*/}
-          {/*    dDay={item.dDay}*/}
-          {/*    region={item.region}*/}
-          {/*    age={item.age}*/}
-          {/*    hashtags={item.hashtags}*/}
-          {/*  />*/}
-          {/*))}*/}
+          {data.map((item, index) => (
+            <ContentBox
+              // key={item.id}
+              key={index}
+              thumbnail={`data:image/png;base64,${item.image}`}
+              title={item.title}
+              dDay={item.deadline}
+              region={item.region}
+              age={item.age}
+              hashtags={[item.hashtag1, item.hashtag2, item.hashtag3]}
+
+            />
+          ))}
         </ContentGrid>
       </FundPageContainer>
     </>

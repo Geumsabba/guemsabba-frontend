@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import Navbarmain from './NavbarMain';
 import landinglogo3 from './landinglogo3.png';
 import landinglogo4 from './landinglogo4.png';
@@ -27,10 +27,26 @@ import placeholder5 from "../img/placeholder5.png"
 import placeholder6 from "../img/placeholder6.png"
 
 
-
 function Newsletter() {
   const [inputValue, setInputValue] = useState('');
-/* 
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    // Simulate fetching data from an API
+    // Replace this with your actual API endpoint
+    fetch('http://101.79.9.230:8080/geumsabba/newsletter/getall')
+    // fetch('http://localhost:8080/geumsabba/newsletter/getall')
+      .then(response => response.json())
+      .then(data => {
+          setData(data);
+          console.log('Fetched data:', data);
+          console.log('Fetched id:', data[0].id);
+        }
+      )
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
+/*
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -89,10 +105,10 @@ function Newsletter() {
           />
           <div className="icon">
             <FontAwesomeIcon icon={faSearch} /></div>
-        </div> 
+        </div>
         <div className={"blank2"}></div>
         <div className='top-categorie'>
-          
+
           <div className='categorie-item'>
             <a href="#">경제</a>
             <a href="#">주식</a>
@@ -107,8 +123,8 @@ function Newsletter() {
           </div>
         </div>
 
-  {/* mainContainer */}
-{/*         <div className='mainContainer'>
+        {/* mainContainer */}
+        {/*         <div className='mainContainer'>
           <Link to='/NewsletterContents'><Pin pinSize = {'small'}/>
           <Pin pinSize = {'medium'}/>
           <Pin pinSize = {'large'}/>
@@ -120,152 +136,64 @@ function Newsletter() {
           <Pin pinSize = {'large'}/>
           <Pin pinSize = {'small'}/>
           <Pin pinSize = {'medium'}/>
-          <Pin pinSize = {'large'}/> 
+          <Pin pinSize = {'large'}/>
         </div>
  */}
 
         <div className='NewsLetterStyle'>
           {/*뉴스레터 10개 생성 -> NewsletterStyle.js */}
           <ThreeColContainer>
+
             <OneRowContainer>
-              <NewsLetterWrapper show={true}>
-              <Link to="/NewsletterContents">
-                <NewsLetterImg src={placeholder}/>
-              </Link>
-                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-                <NewsLetterWriter>
-                  edit: 명시은
-                </NewsLetterWriter>
-                <NewsLetterContent>
-                  간단한 설명 와라라랄랄
-                </NewsLetterContent>
-              </NewsLetterWrapper>
-
-              <div style={{width: 52}}></div>
-
-              <NewsLetterWrapper show={true}>
-                <Link to='/NewsletterContents'>
-                <NewsLetterImg src={placeholder2}/>
-                </Link>
-                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-                <NewsLetterWriter>
-                  edit: 명시은
-                </NewsLetterWriter>
-                <NewsLetterContent>
-                간단한 설명 와라라랄랄<br />
-                간단한 설명  와라라랄랄간단한 설명 와라라랄랄<br />
-                간단한 설명 와라라랄랄<br />
-                간단한 설명 와라라랄랄<br />
-                간단한 설명 와라라랄랄
-                </NewsLetterContent>
-              </NewsLetterWrapper>
-
-              <div style={{width: 52}}></div>
-
-              <NewsLetterWrapper show={true}>
-                <NewsLetterImg src={placeholder3}/>
-                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-                <NewsLetterWriter>
-                  edit: 명시은
-                </NewsLetterWriter>
-                <NewsLetterContent>
-                간단한 설명 와라라랄랄<br />
-                간단한 설명 와라라랄랄간단한 설명 와라라랄랄<br />
-                간단한 설명 와라라랄랄<br />
-                </NewsLetterContent>
-              </NewsLetterWrapper>
+              {data.map((item, index) => (
+                (index) % 3 === 0 && (
+                    <NewsLetterWrapper key={index}>
+                      <Link to="/NewsletterContents">
+                        <NewsLetterImg src={`data:image/png;base64,${item.image1}`}/>
+                      </Link>
+                      <NewsLetterTitle>{item.title}</NewsLetterTitle>
+                      <NewsLetterWriter>edit: {item.editor}</NewsLetterWriter>
+                      <NewsLetterContent>{item.header}</NewsLetterContent>
+                    </NewsLetterWrapper>
+                )
+              ))}
             </OneRowContainer>
 
             <OneRowContainer>
-              <NewsLetterWrapper show={true}>
-                <NewsLetterImg src={placeholder4}/>
-                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-                <NewsLetterWriter>
-                  edit: 명시은
-                </NewsLetterWriter>
-                <NewsLetterContent>
-                간단한 설명 와라라랄랄<br />
-                간단한 설명 와라라랄랄<br />
-                간단한 설명 와라라랄랄간단한 설명 와라라랄랄<br />
-                간단한 설명 와라라랄랄간단한 설명 와라라랄랄간단한 설명 와라라랄랄
-
-                </NewsLetterContent>
-              </NewsLetterWrapper>
-
-              <div style={{width: 52}}></div>
-
-              <NewsLetterWrapper show={true}>
-                <NewsLetterImg src={placeholder5}/>
-                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-                <NewsLetterWriter>
-                  edit: 명시은
-                </NewsLetterWriter>
-                <NewsLetterContent>
-                  간단한 설명 와라라랄랄
-                </NewsLetterContent>
-              </NewsLetterWrapper>
-
-              <div style={{width: 52}}></div>
-
-              <NewsLetterWrapper show={true}>
-                <NewsLetterImg src={placeholder6}/>
-                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-                <NewsLetterWriter>
-                  edit: 명시은
-                </NewsLetterWriter>
-                <NewsLetterContent>
-                간단한 설명 와라라랄랄간단한 설명 와라라랄랄<br />
-                간단한 설명 와라라랄랄
-                </NewsLetterContent>
-              </NewsLetterWrapper>
-
-              <div style={{width: 52}}></div>
-
+              {data.map((item, index) => (
+                (index) % 3 === 1 && (
+                    <NewsLetterWrapper key={index}>
+                      <Link to="/NewsletterContents">
+                        <NewsLetterImg src={`data:image/png;base64,${item.image1}`}/>
+                      </Link>
+                      <NewsLetterTitle>{item.title}</NewsLetterTitle>
+                      <NewsLetterWriter>edit: {item.editor}</NewsLetterWriter>
+                      <NewsLetterContent>{item.header}</NewsLetterContent>
+                    </NewsLetterWrapper>
+                )
+              ))}
             </OneRowContainer>
 
             <OneRowContainer>
-              <NewsLetterWrapper show={true}>
-                <NewsLetterImg src={placeholder}/>
-                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-                <NewsLetterWriter>
-                  edit: 명시은
-                </NewsLetterWriter>
-                <NewsLetterContent>
-                  간단한 설명 와라라랄랄
-                </NewsLetterContent>
-              </NewsLetterWrapper>
-
-              <div style={{width: 52}}></div>
-
-              <NewsLetterWrapper show={true}>
-                <NewsLetterImg src={placeholder2}/>
-                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-                <NewsLetterWriter>
-                  edit: 명시은
-                </NewsLetterWriter>
-                <NewsLetterContent>
-                  간단한 설명 와라라랄랄
-                </NewsLetterContent>
-              </NewsLetterWrapper>
-
-              <div style={{width: 52}}></div>
-
-              <NewsLetterWrapper  show={true}>
-                <NewsLetterImg src={placeholder3}/>
-                <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
-                <NewsLetterWriter>
-                  edit: 명시은
-                </NewsLetterWriter>
-                <NewsLetterContent>
-                  간단한 설명 와라라랄랄
-                </NewsLetterContent>
-              </NewsLetterWrapper>
+              {data.map((item, index) => (
+                (index) % 3 === 2 && (
+                    <NewsLetterWrapper key={index}>
+                      <Link to="/NewsletterContents">
+                        <NewsLetterImg src={`data:image/png;base64,${item.image1}`}/>
+                      </Link>
+                      <NewsLetterTitle>{item.title}</NewsLetterTitle>
+                      <NewsLetterWriter>edit: {item.editor}</NewsLetterWriter>
+                      <NewsLetterContent>{item.header}</NewsLetterContent>
+                    </NewsLetterWrapper>
+                )
+              ))}
             </OneRowContainer>
+
           </ThreeColContainer>
-          
-        </div> 
+
+        </div>
       </div>
-    </div>   
+    </div>
   );
 }
 

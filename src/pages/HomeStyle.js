@@ -101,6 +101,13 @@ export const FlexRow = styled.div`
   align-items: center;
 `;
 
+export const FlexRow2 = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  //align-items: center;
+`;
+
 
 export const EditorName = styled.div`
   color: #26231D;
@@ -167,6 +174,7 @@ export const ContentDiv = styled.div`
   font-weight: 400;
   line-height: 24px; /* 150% */
   margin-top: 33px;
+  margin-bottom: 24px;
 `;
 
 export const MoreButton = styled.button`
@@ -177,7 +185,6 @@ export const MoreButton = styled.button`
   border-radius: 90px;
   position: absolute;
   right: 0;
-  bottom: 0;
   //bottom: 0;
   // margin-top: 28px;
   //margin-bottom: 48px;
@@ -241,7 +248,7 @@ export const NewsLetterWrapper = styled.div`
   width: 400px;
   //background-color: #cbcbcb;
   display: flex;
-  justify-content: center;
+  //justify-content: center;
   //align-items: center;
   flex-direction: column;
   margin-top: 12px;
@@ -250,7 +257,8 @@ export const NewsLetterWrapper = styled.div`
 export const NewsLetterImg = styled.img`
   width: 100%;
   height: 265px;
-  object-fit: contain;
+  //object-fit: contain;
+  object-fit: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -308,17 +316,18 @@ export const NewsLetterWriter = styled.div`
 export const ThreeColContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   height: 400px;
   //border: 1px solid #ccc;
 `;
 
 export const OneRowContainer = styled.div`
-  flex: 1;
+  //flex: 1;
   display: flex;
   //justify-content: center;
   align-items: center;
   //background-color: #f0f0f0;
   //border: 1px solid #ddd;
-  display: flex;
   flex-direction: column;
+  margin: 0 26px ;
 `;
