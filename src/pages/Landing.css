@@ -166,7 +166,18 @@ header ul li:last-child a:hover {
 {
     position: relative;
     max-width: 600px;
+    /* animation: slide-1 2s; */
 }
+
+/* @keyframes slide-1 {
+    from {
+        left: -130px
+    }
+    to{
+        left: 0px;
+    }
+}
+ */
 
 .first .content .textBox h1
 {
@@ -179,6 +190,7 @@ header ul li:last-child a:hover {
     font-weight: 400;   
     line-height: 80px;
     margin-bottom: 24px;
+    
 }
 
 .first .content .textBox h1 span
@@ -211,7 +223,7 @@ header ul li:last-child a:hover {
     padding: 20px 24px;
 
     background: #C5DFF8;
-    color: #4A55A2;;
+    color: #4A55A2;
     border-radius: 8px;
 
     font-family: ABeeZee;
@@ -221,16 +233,28 @@ header ul li:last-child a:hover {
     line-height: 24px; /* 133.333% */
     letter-spacing: 1px;
     text-decoration: none;
-}
+} 
+
 
 .first .content .button a:focus {
     outline: none;
 }
 
-.first .content .button a:hover {
+ .first .content .button a:hover {
     background-color: #A0BFE0;
     color: #303031;
-}
+    animation: bounce 1s linear;
+} 
+
+ @keyframes bounce{
+    20%, 50%, 80%, to{
+        transform: translateY(0);
+    }
+    40%{
+        transform: translateY(-30%)
+    }
+} 
+
 
 .first .content .imgBox
 {
@@ -274,6 +298,7 @@ header ul li:last-child a:hover {
     max-width: 608px;
     display: inline-flex;
     justify-content: flex-end;
+    animation: slide 2s;
 }
 
 .second .content .textBox h1
@@ -322,6 +347,16 @@ header ul li:last-child a:hover {
 .second .content .button a:hover {
     background-color: #A0BFE0;
     color: #303031;
+    animation: bounce 1s linear;
+} 
+
+ @keyframes bounce{
+    20%, 50%, 80%, to{
+        transform: translateY(0);
+    }
+    40%{
+        transform: translateY(-30%)
+    }
 }
 
 
@@ -339,6 +374,7 @@ header ul li:last-child a:hover {
 {
     position: relative;
     max-width: 600px;
+    animation: slide-1 2s;
 }
 
 .third .content .textBox h1
@@ -386,7 +422,19 @@ header ul li:last-child a:hover {
 .third .content .button a:hover {
     background-color: #A0BFE0;
     color: #303031;
-}
+    animation: bounce 1s linear;
+} 
+
+ @keyframes bounce{
+    20%, 50%, 80%, to{
+        transform: translateY(0);
+    }
+    40%{
+        transform: translateY(-30%)
+    }
+} 
+
+
 
 .third .content .imgBox
 {
@@ -487,4 +535,14 @@ header ul li:last-child a:hover {
 .forth .content .button a:hover {
     background-color: #A0BFE0;
     color: #303031;
-}
+    animation: bounce 1s linear;
+} 
+
+ @keyframes bounce{
+    20%, 50%, 80%, to{
+        transform: translateY(0);
+    }
+    40%{
+        transform: translateY(-30%)
+    }
+} 

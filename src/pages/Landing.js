@@ -82,8 +82,8 @@ window.onload = () => {
           <ul>
             <li><a href="/home">맞춤형 지원금</a></li>
             <li><a href="#">맞춤형 재테크</a></li>
-            <li><Link to='/Newsletter'>맞춤형 금융지식</Link></li>
-            <li><a href="#">회원가입</a></li>
+            <li><a href='/Newsletter'>맞춤형 금융지식</a></li>
+            <li><a href="/Signup">회원가입</a></li>
           </ul>
         </header>
         <div className="content">
@@ -110,10 +110,12 @@ window.onload = () => {
           <img src={landinglogo1} className="guemsabba" alt="main logo" />
         </div>
         <div className="textBox">
+          <div className='overlay'>
           <h1>
             지금 내가 받을 수 있는<br />
             <span>지원금 혜택</span>은?
           </h1>
+          </div>
           <div className="button">
             <a href="#">맞춤형 지원금 이동하기</a>
           </div>

@@ -255,6 +255,14 @@ export const NewsLetterImg = styled.img`
   justify-content: center;
   align-items: center;
   margin-top: 11px;
+
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 export const NewsLetterTitle = styled.div`

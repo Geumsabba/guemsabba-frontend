@@ -59,25 +59,28 @@ const Login = () => {
     <div className="signup-page">
       <Navbar/>
       <div className="signup-container">
-        <div className={"blank1"}></div>
-        <div className="header">로그인</div>
+        {/* <div className={"blank1"}></div> */}
+        {/* <div className="header">로그인</div>  */}
         <div className={"blank1"}></div>
         <div className={"flex-row"}>
+
+
           {/* 계정생성 */}
           {currentPage === 1 && (
             <div className="account-section">
               <span
                 style={{height: '40px'}}
                 className={"vmid"}>
-                <img
+                {/* <img
                   //style width 10px
                   style={{width: '20px'}}
                   src={number1}></img>
-                <span className="section-header">로그인</span>
+                <span className="section-header">로그인</span> */}
               </span>
-              <div className="section-disc">로그인 해주세요:)</div>
+              {/* <div className="section-disc">로그인 해주세요:)</div> */}
               <div className={"blank1"}></div>
-              <div className="sub-text">*아이디</div>
+              <button className='login-box'>
+              <div className="sub-text">아이디</div>
               <input
                 type="text"
                 placeholder="아이디를 입력해주세요."
@@ -86,7 +89,7 @@ const Login = () => {
               />
               <div className="flex-row">
                 <div className="flex-column">
-                  <div className="sub-text">*비밀번호</div>
+                  <div className="sub-text">비밀번호</div>
                   <input
                     type="password"
                     style={{width: 610}}
@@ -107,10 +110,24 @@ const Login = () => {
                 }}
                 disabled={!formData.nickname || !formData.username || !formData.password || !formData.confirmPassword}
               >
-                Next
+                로그인하기
               </button>
+              <div className={"blank1"}></div>
+              <div className="find-text">아이디/비밀번호 찾기</div>
+              </button>
+
+              <div className={"blank1"}></div>
+              <button className='BirthDatePicker-button' 
+              onClick={
+                () => window.location.href = 'Signup'
+              }> 회원가입하기</button>
             </div>
           )}
+
+
+
+
+
 
 
           {/* 기본정보 */}
@@ -289,6 +306,8 @@ const Login = () => {
               < /button>
             </div>
           )}
+
+
           <div className={"flex-column"}>
             <img src={logo} alt="Site Logo" className="site-logo"/>
             <img src={titleTextImg} alt="Site Logo" className="site-title"/>

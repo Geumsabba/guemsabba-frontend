@@ -125,6 +125,7 @@
 
 .NewsletterContents .Toolbar{
     width: 1920px;
+    margin-top: -2px;
 }
 
 /* widget */

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbarmain from './NavbarMain';
 import landinglogo3 from './landinglogo3.png';
 import landinglogo4 from './landinglogo4.png';
@@ -27,8 +27,32 @@ import placeholder5 from "../img/placeholder5.png"
 import placeholder6 from "../img/placeholder6.png"
 
 
+
 function Newsletter() {
   const [inputValue, setInputValue] = useState('');
+/* 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    });
+
+    const sectionElements = document.querySelectorAll('.NewsLetterWrapper');
+    sectionElements.forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []); */
+
+
 
   return (
     <div className='Newsletter-page'>
@@ -66,7 +90,9 @@ function Newsletter() {
           <div className="icon">
             <FontAwesomeIcon icon={faSearch} /></div>
         </div> 
+        <div className={"blank2"}></div>
         <div className='top-categorie'>
+          
           <div className='categorie-item'>
             <a href="#">경제</a>
             <a href="#">주식</a>
@@ -102,7 +128,7 @@ function Newsletter() {
           {/*뉴스레터 10개 생성 -> NewsletterStyle.js */}
           <ThreeColContainer>
             <OneRowContainer>
-              <NewsLetterWrapper>
+              <NewsLetterWrapper show={true}>
               <Link to="/NewsletterContents">
                 <NewsLetterImg src={placeholder}/>
               </Link>
@@ -117,7 +143,7 @@ function Newsletter() {
 
               <div style={{width: 52}}></div>
 
-              <NewsLetterWrapper>
+              <NewsLetterWrapper show={true}>
                 <Link to='/NewsletterContents'>
                 <NewsLetterImg src={placeholder2}/>
                 </Link>
@@ -136,7 +162,7 @@ function Newsletter() {
 
               <div style={{width: 52}}></div>
 
-              <NewsLetterWrapper>
+              <NewsLetterWrapper show={true}>
                 <NewsLetterImg src={placeholder3}/>
                 <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
                 <NewsLetterWriter>
@@ -151,7 +177,7 @@ function Newsletter() {
             </OneRowContainer>
 
             <OneRowContainer>
-              <NewsLetterWrapper>
+              <NewsLetterWrapper show={true}>
                 <NewsLetterImg src={placeholder4}/>
                 <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
                 <NewsLetterWriter>
@@ -168,7 +194,7 @@ function Newsletter() {
 
               <div style={{width: 52}}></div>
 
-              <NewsLetterWrapper>
+              <NewsLetterWrapper show={true}>
                 <NewsLetterImg src={placeholder5}/>
                 <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
                 <NewsLetterWriter>
@@ -181,7 +207,7 @@ function Newsletter() {
 
               <div style={{width: 52}}></div>
 
-              <NewsLetterWrapper>
+              <NewsLetterWrapper show={true}>
                 <NewsLetterImg src={placeholder6}/>
                 <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
                 <NewsLetterWriter>
@@ -194,10 +220,11 @@ function Newsletter() {
               </NewsLetterWrapper>
 
               <div style={{width: 52}}></div>
+
             </OneRowContainer>
 
             <OneRowContainer>
-              <NewsLetterWrapper>
+              <NewsLetterWrapper show={true}>
                 <NewsLetterImg src={placeholder}/>
                 <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
                 <NewsLetterWriter>
@@ -210,7 +237,7 @@ function Newsletter() {
 
               <div style={{width: 52}}></div>
 
-              <NewsLetterWrapper>
+              <NewsLetterWrapper show={true}>
                 <NewsLetterImg src={placeholder2}/>
                 <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
                 <NewsLetterWriter>
@@ -223,7 +250,7 @@ function Newsletter() {
 
               <div style={{width: 52}}></div>
 
-              <NewsLetterWrapper>
+              <NewsLetterWrapper  show={true}>
                 <NewsLetterImg src={placeholder3}/>
                 <NewsLetterTitle>컨텐츠 제목 </NewsLetterTitle>
                 <NewsLetterWriter>
