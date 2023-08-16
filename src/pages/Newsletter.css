@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'SBAggro';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/sandbox/SBAggroLight.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/sandbox/SBAggroLight.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/sandbox/SBAggroLight.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/sandbox/SBAggroLight.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/sandbox/SBAggroLight.ttf') format("truetype");
+    font-display: swap;
+}
+
+
 .Newsletter-page {
     display: flex;
     flex-direction: column;
@@ -67,7 +80,7 @@
 {
     color: #FFF;
     text-align: right;
-    font-family: SB Aggro;
+    font-family: 'SBAggro';
     font-size: 48px;
     font-style: normal;
     font-weight: 700;
@@ -88,7 +101,7 @@
     position: relative;
 
     color: #FFF;
-    font-family: Poppins;
+    font-family: 'SBAggro';
     font-size: 16px;
     font-style: normal;
     font-weight: 500;

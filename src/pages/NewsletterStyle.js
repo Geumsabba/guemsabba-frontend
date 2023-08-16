@@ -1,5 +1,5 @@
 //styled-components for Newletter.js
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components'
 
 //style for NewsLetterWrapper 
 export const ThreeColContainer = styled.div`
@@ -61,7 +61,7 @@ export const NewsLetterImg = styled.img`
 //Newslettertext 
 export const NewsLetterTitle = styled.div`
   color: #26231D;
-  font-family: Inter;
+  font-family: 'SBAggro';
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -73,6 +73,7 @@ export const NewsLetterTitle = styled.div`
   font-weight: 700;
   line-height: 36px; /* 112.5% */
   margin-top: 24px;
+
 `;
 
 export const NewsLetterContent = styled.div`
@@ -96,3 +97,4 @@ export const NewsLetterWriter = styled.div`
   font-weight: 600;
   line-height: 20px; 
 `;
+
