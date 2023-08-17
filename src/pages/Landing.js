@@ -6,6 +6,7 @@ import landinglogo1 from './landinglogo1.png';
 import landinglogo2 from './landinglogo2.png';
 import landinglogo3 from './landinglogo3.png';
 import landinglogo4 from './landinglogo4.png';
+import Quotemark1 from './Quotemark1.png';
 /* 
 import fullpage from 'fullpage.js';
  */
@@ -34,13 +35,14 @@ export default function Landing() {
 
 
 /* fullpage */
-window.onload = () => {
+/* window.onload = () => { */
+useEffect(() => {
   const Slider = function(fullpage) {
     let slides = [],
-        count = 0,
-        current = 0,
-        touchstart = 0,
-        animation_state = false;
+      count = 0,
+      current = 0,
+      touchstart = 0,
+      animation_state = false;
 
     const init = () => {
       slides = fullpage.children;
@@ -51,9 +53,9 @@ window.onload = () => {
     }
 
     const gotoNum = (index) => {
-      if ((index != current) && !animation_state) {
+      if ((index !== current) && !animation_state) {
         animation_state = true;
-        setTimeout(() => animation_state = false, 500);
+        setTimeout(() => (animation_state = false), 500);
         current = index;
         for (let i = 0; i < count; i++) {
           slides[i].style.bottom = (current - i) * 100 + '%';
@@ -61,19 +63,25 @@ window.onload = () => {
       }
     }
 
-    const gotoNext = () => current < count - 1 ? gotoNum(current + 1) : false;
-    const gotoPrev = () => current > 0 ? gotoNum(current - 1) : false;
-    fullpage.ontouchstart = (e) => touchstart = e.touches[0].screenY;
-    fullpage.ontouchend = (e) => touchstart < e.changedTouches[0].screenY ? gotoPrev() : gotoNext();
-    fullpage.onmousewheel = fullpage.onwheel = (e) => e.deltaY < 0 ? gotoPrev() : gotoNext();
+    const gotoNext = () => (current < count - 1 ? gotoNum(current + 1) : false);
+    const gotoPrev = () => (current > 0 ? gotoNum(current - 1) : false);
+
+    if (fullpage) {
+      fullpage.ontouchstart = (e) => (touchstart = e.touches[0].screenY);
+      fullpage.ontouchend = (e) =>
+        touchstart < e.changedTouches[0].screenY ? gotoPrev() : gotoNext();
+      fullpage.onmousewheel = fullpage.onwheel = (e) =>
+        e.deltaY < 0 ? gotoPrev() : gotoNext();
+    }
 
     init();
   }
 
-  let fullpage = document.querySelector('.fullpage');
-  let slider = new Slider(fullpage);
-}
-
+   let fullpage = document.querySelector('.fullpage');
+    if (fullpage) {
+      let slider = new Slider(fullpage);
+    }
+  }, []);  
 
   return (
     <div className='fullpage'>
@@ -106,6 +114,7 @@ window.onload = () => {
 
       <section className='second'>
        <div className="content">
+       <div className='imgBox-back'></div>
         <div className="imgBox">
           <img src={landinglogo1} className="guemsabba" alt="main logo" />
         </div>
@@ -113,7 +122,7 @@ window.onload = () => {
           <div className='overlay'>
           <h1>
             지금 내가 받을 수 있는<br />
-            <span>지원금 혜택</span>은?
+            <span className='highlight'>지원금 혜택</span>은?
           </h1>
           </div>
           <div className="button">
@@ -137,11 +146,13 @@ window.onload = () => {
           <div className="imgBox">
             <img src={landinglogo2} className="guemsabba" alt="main logo" />
           </div>
+          <div className='imgBox-back'></div>
         </div>
       </section>
 
       <section className='forth'>
       <div className="content">
+      <div className='imgBox-back'></div>
         <div className="imgBox">
           <img src={landinglogo3} className="guemsabba" alt="main logo" />
           <img src={landinglogo4} className="guemsabba4" alt="main logo4" />

@@ -80,7 +80,7 @@ const Login = () => {
               {/* <div className="section-disc">로그인 해주세요:)</div> */}
               <div className={"blank1"}></div>
               <button className='login-box'>
-              <div className="sub-text">아이디</div>
+              <div className="sub-text">*아이디</div>
               <input
                 type="text"
                 placeholder="아이디를 입력해주세요."
@@ -89,7 +89,7 @@ const Login = () => {
               />
               <div className="flex-row">
                 <div className="flex-column">
-                  <div className="sub-text">비밀번호</div>
+                  <div className="sub-text">*비밀번호</div>
                   <input
                     type="password"
                     style={{width: 610}}
