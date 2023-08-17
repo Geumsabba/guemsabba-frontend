@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbarmain from './NavbarMain';
 import { Link } from 'react-router-dom';
 import './NewsletterContents.css';
@@ -15,6 +15,27 @@ import Toolbar from './Toolbar.png';
 import subscribe from './subscribe.png';
 
 export default function NewsletterContents() {
+
+  /* content에 fade-in */
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    });
+    
+
+    const sectionElements = document.querySelectorAll('.letter');
+    sectionElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);  
 
   return (
     <div className='NewsletterContents'>
@@ -66,67 +87,69 @@ export default function NewsletterContents() {
       </div>
       <div className={"blank1"}></div>
       {/* 금사빠 뉴스레터 */}
-      <div className='Title'>
+      <div className='letter'>
+        <div className='Title'>
         제목
-      </div>
-      <div className={"blank1"}></div>
-      <div className='textbox1'>
-        <div className='header'>
-          머릿글
         </div>
         <div className={"blank1"}></div>
-        <div className='subheading1'>
-          소제목1
+        <div className='textbox1'>
+          <div className='header'>
+            머릿글
+          </div>
+          <div className={"blank1"}></div>
+          <div className='subheading1'>
+            소제목1
+          </div>
+          <div className={"blank1"}></div>
+          <div className='maintext1'>
+            본문
+          </div>
         </div>
         <div className={"blank1"}></div>
-        <div className='maintext1'>
-          본문
+        <div className="imgBox1">
+          <div className='imgcontent'>
+            <img src={newsgroup1} className="newsgroup1" alt="newsgroup1" />
+          </div>
         </div>
-      </div>
-      <div className={"blank1"}></div>
-      <div className="imgBox1">
-        <div className='imgcontent'>
-          <img src={newsgroup1} className="newsgroup1" alt="newsgroup1" />
-        </div>
-      </div>
-      <div className='textbox2'>
-      <div className={"blank1"}></div>
-      <div className={"blank1"}></div>
-      <div className='subheading2'>
-        소제목2
-      </div>
-      <div className={"blank1"}></div>
-      <div className='maintext2'>
-        본문2
-      </div>
-      </div>
-      <div className="imgBox2">
-      <div className={"blank1"}></div>
-        <div className='imgcontent2'>
-          <img src={newsgroup2} className="newsgroup2" alt="newsgroup2" />
-          <img src={newsgroup3} className="newsgroup3" alt="newsgroup3" />
-        </div>
-      <div className='textbox3'>
-      <div className={"blank1"}></div>
-        <div className='subheading3'>
-          소제목3
+        <div className='textbox2'>
+        <div className={"blank1"}></div>
+        <div className={"blank1"}></div>
+        <div className='subheading2'>
+          소제목2
         </div>
         <div className={"blank1"}></div>
-        <div className='maintext3'>
-          본문3
+        <div className='maintext2'>
+          본문2
         </div>
+        </div>
+        <div className="imgBox2">
+        <div className={"blank1"}></div>
+          <div className='imgcontent2'>
+            <img src={newsgroup2} className="newsgroup2" alt="newsgroup2" />
+            <img src={newsgroup3} className="newsgroup3" alt="newsgroup3" />
+          </div>
+        <div className='textbox3'>
+        <div className={"blank1"}></div>
+          <div className='subheading3'>
+            소제목3
+          </div>
+          <div className={"blank1"}></div>
+          <div className='maintext3'>
+            본문3
+          </div>
+        </div>
+        <div className={"blank1"}></div>
+        <div className='commentBox'>
+          <img src={Group77} className="Group77" alt="Group77" />
+        </div>
+        <div className={"blank1"}></div>
+        <div className={"blank1"}></div>
+        <div className='Badge'>
+        <Link to='/Newsletter'><img src={Badge} className="Badge" alt="Badge" /></Link>
+        </div>
+        <div className={"blank1"}></div>
+        <div className={"blank1"}></div>
       </div>
-      <div className={"blank1"}></div>
-      <div className='commentBox'>
-        <img src={Group77} className="Group77" alt="Group77" />
-      </div>
-      <div className={"blank1"}></div>
-      <div className={"blank1"}></div>
-      <div className='Badge'>
-       <Link to='/Newsletter'><img src={Badge} className="Badge" alt="Badge" /></Link>
-      </div>
-      <div className={"blank1"}></div>
-      <div className={"blank1"}></div>
     </div>
   </div>
 

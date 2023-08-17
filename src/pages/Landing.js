@@ -6,7 +6,6 @@ import landinglogo1 from './landinglogo1.png';
 import landinglogo2 from './landinglogo2.png';
 import landinglogo3 from './landinglogo3.png';
 import landinglogo4 from './landinglogo4.png';
-import Quotemark1 from './Quotemark1.png';
 /* 
 import fullpage from 'fullpage.js';
  */
@@ -83,6 +82,8 @@ useEffect(() => {
     }
   }, []);  
 
+
+
   return (
     <div className='fullpage'>
       <section className='first'>
@@ -137,7 +138,7 @@ useEffect(() => {
           <div className="textBox">
             <h1>
               나에게 딱 맞는<br />
-              <span>재테크 정보</span>는?
+              <span className='highlight'>재테크 정보</span>는?
             </h1>
             <div className="button">
               <a href="#">맞춤형 재테크 이동하기</a>
@@ -160,7 +161,7 @@ useEffect(() => {
         <div className="textBox">
           <h1>
             어려운 금융지식 !<br />
-            <span>금.사.빠</span>가<br />
+            <span className='highlight'>금.사.빠</span>가<br />
             도와줄게요 :)
           </h1>
           <div className="button">

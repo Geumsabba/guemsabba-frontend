@@ -1,3 +1,23 @@
+@font-face {
+    font-family: 'SCoreDream';
+    font-weight: 100; 
+    font-style: normal; 
+    src: url(https://cdn.jsdelivr.net/gh/webfontworld/SCoreDream/SCoreDream1.woff2) format('woff2'),
+         url(https://cdn.jsdelivr.net/gh/webfontworld/SCoreDream/SCoreDream1.woff) format('woff');
+    font-display: swap;
+}
+
+/* fade-in 효과 적용 */
+.letter {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+}
+
+
 .NewsletterContents {
     display: flex;
     flex-direction: column;
@@ -85,7 +105,7 @@
 {
     color: #FFF;
     text-align: right;
-    font-family: Poppins;
+    font-family: 'SBAggro';
     font-size: 48px;
     font-style: normal;
     font-weight: 700;
@@ -106,7 +126,7 @@
     position: relative;
 
     color: #FFF;
-    font-family: Poppins;
+    font-family: 'SBAggro';
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -168,12 +188,14 @@
     color: #4A55A2;
     text-align: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Poppins;
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
     line-height: 40px; /* 100% */
+    display: grid;
+    font-family: 'SBAggro';
 }
+    
 
 
 /* textBox1 */
@@ -186,21 +208,23 @@
 .NewsletterContents .header
 {
     color: #6C757D;
-    font-family: Poppins;
+    font-family: 'SBAggro';
     font-size: 14px;
     font-style: normal;
     font-weight: 300;
     line-height: 25px;
+    text-align: center;
 }
 
 .NewsletterContents .subheading1
 {
     color: #4A55A2;
-    font-family: Poppins;
+    font-family: 'SBAggro';
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
     line-height: 25px;
+    text-align: center;
 }
 
 .NewsletterContents .maintext1
@@ -211,6 +235,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 25px;
+    text-align: center;
 }
 
 /* imgBox1 */
@@ -246,11 +271,12 @@
 .NewsletterContents .subheading2
 {
     color: #4A55A2;
-    font-family: Poppins;
+    font-family: 'SBAggro';
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
     line-height: 25px;
+    text-align: center;
 }
 
 .NewsletterContents .maintext2
@@ -261,6 +287,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 25px;
+    text-align: center;
 }
 
 
@@ -311,7 +338,7 @@
 .NewsletterContents .textbox3 .subheading3
 {
     color: #4A55A2;
-    font-family: Poppins;
+    font-family: 'SBAggro';
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
