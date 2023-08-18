@@ -194,10 +194,11 @@ header ul li:last-child a:hover {
     position: absolute;
     left: 100px;
     width: 1920px;
-    height: 1060px;
+    height: 1040px;
     top: 100px;
     object-fit: cover;
     margin-left: -200px;
+    margin-top: 20px;
   }
 
 .first .small-logo
@@ -242,6 +243,7 @@ header ul li:last-child a:hover {
     animation: anime 1s infinite ease-in-out alternate;
     -webkit-animation: anime 1s infinite ease-in-out alternate;
     animation-delay: .3s;
+    margin-left: 10px;
 } 
 
 @keyframes anime {
@@ -254,7 +256,6 @@ header ul li:last-child a:hover {
 }
 }
 
-
 .first .content .button a:focus {
     outline: none;
 }
@@ -264,6 +265,13 @@ header ul li:last-child a:hover {
     color: #303031;
 } 
 
+.first .scroll
+{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin-left: 830px;
+}
 
 
 /*2번쨰*/

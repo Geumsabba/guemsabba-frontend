@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Navbar from "./Navbar";
 import NavbarMain from "./NavbarMain";
 import {BannerImg} from "./HomeStyle";
-import sitebanner from "../img/Group 79.png";
+import sitebanner from "./Group 123.png";
 import ContentBox from "./ContentBox";
 import sampleImage from '../img/Image.png';
 
@@ -40,8 +40,21 @@ const FilterDropdown = styled.select`
 const ContentGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 50px;
+`; 
+
+
+const StyledTitle = styled.h2`
+  font-family: 'BMJua';
+  font-weight: 500;
 `;
+
+/* &:hover {
+  transform: scale(1.1);
+  transform-origin: center center;
+  transition: all 0.2s ease-in-out;
+}
+ */
 
 
 const FundPage = () => {
@@ -67,6 +80,8 @@ const FundPage = () => {
       <NavbarMain/>
       <BannerImg src={sitebanner}/>
 
+      <link href="https://webfontworld.github.io/woowahan/BMJua.css" rel="stylesheet"/>
+
       <FundPageContainer>
         <SearchBar placeholder="Search"/>
         <FilterContainer>
@@ -83,18 +98,19 @@ const FundPage = () => {
             {/* Add other options */}
           </FilterDropdown>
         </FilterContainer>
+        <div className={"blank1"}></div>
         <ContentGrid>
+          {/* <FundOverlay className="overlay">view more !</FundOverlay> */}
           {data.map((item, index) => (
             <ContentBox
               // key={item.id}
               key={index}
               thumbnail={`data:image/png;base64,${item.image}`}
-              title={item.title}
+              title={<StyledTitle>{item.title}</StyledTitle>}
               dDay={item.deadline}
               region={item.region}
               age={item.age}
               hashtags={[item.hashtag1, item.hashtag2, item.hashtag3]}
-
             />
           ))}
         </ContentGrid>

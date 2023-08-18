@@ -104,7 +104,7 @@ export const NewsLetterTitle = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: 36px; /* 112.5% */
-  margin-top: 24px;
+  margin-top: 24px;*
   font-family: 'BMJua';
 `;
 

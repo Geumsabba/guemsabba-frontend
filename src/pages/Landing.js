@@ -6,8 +6,9 @@ import landinglogo1 from './landinglogo1.png';
 import landinglogo2 from './landinglogo2.png';
 import landinglogo3 from './landinglogo3.png';
 import landinglogo4 from './landinglogo4.png';
-import mainlanding from './mainlanding.png';
 import Group5678 from './Group5678.png';
+import landingmain from './landingmain.png';
+import Scroll from './Scroll.png';
 /* 
 import fullpage from 'fullpage.js';
  */
@@ -90,7 +91,7 @@ useEffect(() => {
     <div className='fullpage'>
       <section className='first'>
         <div className='small-logo'>
-          <img src={Group5678} className="Group5678" alt="Group5678"/>
+{/*           <img src={Group5678} className="Group5678" alt="Group5678"/> */}
         </div>
         <header>
           <ul>
@@ -102,7 +103,7 @@ useEffect(() => {
         </header>
         <div className='imgBox-full'>
         <div className="imgBox">
-          <img src={mainlanding} className="mainlanding" alt="mainlanding" />
+          <img src={landingmain} className="landingmain" alt="landingmain" />
         </div>
          <div className="content">
           <div className="textBox">
@@ -110,7 +111,10 @@ useEffect(() => {
               <a href="/login">금사빠 로그인 하기</a>
             </div>
           </div>
-        </div> *
+        </div> 
+        <div className='scroll'>
+        <img src={Scroll} className="Scroll" alt="Scroll" />
+        </div>
         </div>
       </section>
 
@@ -128,7 +132,7 @@ useEffect(() => {
           </h1>
           </div>
           <div className="button">
-            <a href="#">맞춤형 지원금 이동하기</a>
+            <a href="/Fund">맞춤형 지원금 이동하기</a>
           </div>
         </div>
        </div>
@@ -142,7 +146,7 @@ useEffect(() => {
               <span className='highlight'>재테크 정보</span>는?
             </h1>
             <div className="button">
-              <a href="#">맞춤형 재테크 이동하기</a>
+              <a href="/Home">오늘의 뉴스레터 이동하기</a>
             </div>
           </div>
           <div className="imgBox">
@@ -166,7 +170,7 @@ useEffect(() => {
             도와줄게요 :)
           </h1>
           <div className="button">
-            <a href="#">맞춤형 금융지식 이동하기</a>
+            <a href="/NewsletterContents">뉴스레터 모아보기</a>
           </div>
         </div>
       </div>

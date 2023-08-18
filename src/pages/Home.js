@@ -15,7 +15,7 @@ import group118 from '../img/Group 118.png';
 import group119 from '../img/Group 119.png';
 import group120 from '../img/Group 120.png';
 
-import sitebanner from '../img/Group 78.png';
+import sitebanner from './Group 115.png';
 import NavbarMain from "./NavbarMain";
 import {
   BannerDiv,
