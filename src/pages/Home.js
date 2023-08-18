@@ -92,6 +92,7 @@ const Home = () => {
       <NavbarMain/>
       <PageContainer>
         <BannerImg src={sitebanner}/>
+        <div className={"blank1"}></div>
         <PageDiv>
           {/*내가 구독한 에디터*/}
           <link href="https://webfontworld.github.io/DdangFonts/TangsBudaeJjigae.css" rel="stylesheet"/>

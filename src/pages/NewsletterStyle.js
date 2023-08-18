@@ -56,6 +56,7 @@ export const NewsLetterImg = styled.img`
   justify-content: center;
   align-items: center;
   margin-top: 11px;
+  border-radius: 20px;
 
   cursor: pointer;
   outline: none;
@@ -80,6 +81,7 @@ export const NewsLetterOverlay = styled.div`
   color: #fff;
   font-size: 40px;
   font-family: 'SCoreDream';
+  border-radius: 20px;
 
   &:hover {
     opacity :0.93; }

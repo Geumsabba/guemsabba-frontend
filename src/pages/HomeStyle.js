@@ -33,19 +33,21 @@ export const BannerDiv = styled.div`
   //width: 100%;
   //height: 540px;
   color: #4A55A2;
-  font-size: 20px;
+  font-size: 35px;
   font-weight: bold;
   font-family: 'TangsBudaeJjigae';
-                                             
+  margin-left: 60px;
+             
 `;
 
 export const EditorProfileWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 34px;
+  gap: 90px;
   //background-color: #2185d0;
   //border: 1px solid red;
   margin-top: 30px;
+  margin-left: 50px;
 `;
 
 export const EditorProfileContainer = styled.div`
@@ -129,11 +131,15 @@ export const NewsletterLeft = styled.img`
   margin-top: 30px;
   //margin-bottom: 30px;
   border-radius: 56px;
+  margin-left: 100px;
 `;
 
 export const NewsletterContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+
+
 `;
 
 export const DateDiv = styled.div`
@@ -155,11 +161,12 @@ export const ContentContainer = styled.div`
   height: 100%;
   margin-left: 87px;
   //background-color: #2185d0;
+  margin-right: 150px;
 `;
 
 export const TitleDiv = styled.div`
   color: black;
-  font-size: 30px;
+  font-size: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -234,7 +241,7 @@ export const KnlgContainer = styled.div`
   margin-top: 12px;
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
     transform-origin: center center;
     transition: all 0.2s ease-in-out;
   }
@@ -248,6 +255,7 @@ export const KnlgImg = styled.img`
   justify-content: center;
   align-items: center;
   margin-top: 11px;
+  
 `;
 
 
@@ -261,9 +269,10 @@ export const NewsLetterWrapper = styled.div`
   //align-items: center;
   flex-direction: column;
   margin-top: 12px;
+  
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.07);
     transform-origin: center center;
     transition: all 0.2s ease-in-out;
   }
@@ -279,6 +288,7 @@ export const NewsLetterImg = styled.img`
   justify-content: center;
   align-items: center;
   margin-top: 11px;
+  border-radius: 20px;
 
   cursor: pointer;
   outline: none;
@@ -303,6 +313,7 @@ export const NewsLetterOverlay = styled.div`
   color: #fff;
   font-size: 40px;
   font-family: 'SCoreDream';
+  border-radius: 20px;
 
   &:hover {
     opacity :0.93; }
@@ -358,6 +369,7 @@ export const ThreeColContainer = styled.div`
   justify-content: center;
   height: 400px;
   //border: 1px solid #ccc;
+  gap: 180px;
 `;
 
 export const OneRowContainer = styled.div`
@@ -369,4 +381,5 @@ export const OneRowContainer = styled.div`
   //border: 1px solid #ddd;
   flex-direction: column;
   margin: 0 26px ;
+  
 `;
