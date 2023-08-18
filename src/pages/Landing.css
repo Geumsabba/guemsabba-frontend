@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;  
-
+    
 }
 
 @font-face {
@@ -188,6 +188,7 @@ header ul li:last-child a:hover {
     position: relative;
     height: 100vh;
     width: 100vw;
+    
   }
   
   .first .imgBox img {
@@ -296,6 +297,10 @@ header ul li:last-child a:hover {
     flex-shrink: 0;
     display: flex;
     position: relative;
+
+    user-drag: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 
@@ -307,6 +312,10 @@ header ul li:last-child a:hover {
     border-radius: 849px;
     background: #FDEEFF;
     filter: blur(80.5px);
+
+    user-drag: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 
@@ -481,6 +490,10 @@ header ul li:last-child a:hover {
     position: relative;
     margin-right: -1250px;
     z-index: 1;
+
+    user-drag: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 .third .content .imgBox-back
@@ -491,6 +504,10 @@ header ul li:last-child a:hover {
     border-radius: 849px;
     background: #FDEEFF;
     filter: blur(70.5px);
+
+    user-drag: none;
+    user-select: none;
+    pointer-events: none;
 } 
 
 /*4번쨰*/
@@ -516,6 +533,10 @@ header ul li:last-child a:hover {
     border-radius: 849px;
     background: #FDEEFF;
     filter: blur(80.5px);
+
+    user-drag: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 
@@ -531,6 +552,10 @@ header ul li:last-child a:hover {
     margin-left: -900px;
     margin-bottom: 20px;
 
+    user-drag: none;
+    user-select: none;
+    pointer-events: none;
+
 }
 
 .forth .content .imgBox .guemsabba4
@@ -543,12 +568,20 @@ header ul li:last-child a:hover {
     padding-right: 50px;
     margin-top: 130px;
     margin-left: -120px;
+
+    user-drag: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 .forth .content .textBox
 {
     position: relative;
     max-width: 700px;
+
+    user-drag: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 .forth .content .textBox h1

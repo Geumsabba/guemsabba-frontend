@@ -8,6 +8,9 @@ import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {faChevronRight} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
+import sitebanner from './Group 569 .png';
+
+
 import {
   NewsLetterWrapper,
   NewsLetterImg,
@@ -81,6 +84,7 @@ function Newsletter() {
   return (
     <div className='Newsletter-page'>
       <Navbarmain/>
+     
       <div className='banner'>
         <div className='content'>
           {/* overlay */}

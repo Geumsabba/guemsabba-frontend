@@ -28,12 +28,14 @@
 
 /* banner */
 .NewsletterContents .banner {
+    position: relative;
     width: 100%;
     height: 316px;
     flex-shrink: 0;
     background-color: #4A55A2;
 /*     justify-content: space-between; */
 /*     position: relative; */
+
 }
 
 
@@ -43,6 +45,8 @@
     position: relative;
     display: flex;
     align-items: center;
+    
+
 }
 
 .NewsletterContents .banner .content .imgBox
@@ -51,6 +55,7 @@
     display: flex;
     position: relative;
     filter: blur(0.5px); /* 3px */
+
 }
 
 .banner .content .imgBox .newsgroup1
@@ -62,6 +67,8 @@
 /*     z-index: 100;
     overflow: hidden;
     opacity: 0.8; */
+
+    
 }
 
 

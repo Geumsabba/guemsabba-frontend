@@ -49,6 +49,7 @@ const StyledTitle = styled.h2`
   font-weight: 500;
 `;
 
+
 /* &:hover {
   transform: scale(1.1);
   transform-origin: center center;

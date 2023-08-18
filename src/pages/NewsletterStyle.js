@@ -1,6 +1,20 @@
 //styled-components for Newletter.js
 import styled, { css } from 'styled-components'
 
+export const BannerImg = styled.img`
+  width: 100%;
+  height: 440px;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 52px;
+
+  user-drag: none;
+  user-select: none;
+  pointer-events: none;
+`;
+
 
 //style for NewsLetterWrapper 
 export const ThreeColContainer = styled.div`

@@ -18,7 +18,11 @@ export const BannerImg = styled.img`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 52px;
+  margin-top: 88px;
+
+  user-drag: none;
+  user-select: none;
+  pointer-events: none;
 `;
 
 
