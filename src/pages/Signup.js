@@ -12,16 +12,16 @@ import number3 from '../img/Group 5.png';
 const SignUp = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [formData, setFormData] = useState({
-    nickname: '',
     username: '',
-    password: '',
+    userid: '',
+    userpassword: '',
     confirmPassword: '',
-    birthDate: new Date(),
-    gender: '',
-    citizenship: '',
-    email: '',
+    userbirth: new Date(),
+    usergender: '',
+    userlocal: '',
+    useremail: '',
     city: '',
-    district: '',
+    userregion: '',
     neighborhood: '',
     interest: '',
   });
@@ -31,12 +31,14 @@ const SignUp = () => {
   };
 
   const handleSubmit = () => {
+    console.log("Api Call start..")
+
     // Gather all the credentials and make the API call
     const userData = {...formData};
 
     // Make API call and handle signup
     // Example API call using fetch:
-    fetch('your-signup-api-url', {
+    fetch('https://101.79.9.230/geumsabba/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -49,6 +51,8 @@ const SignUp = () => {
         console.log(data);
         // Redirect to another page after successful signup
         // For example: history.push('/dashboard');
+        window.location.href = '/login'; // Redirect to /home
+
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -81,15 +85,15 @@ const SignUp = () => {
               <input
                 type="text"
                 placeholder="닉네임"
-                value={formData.nickname}
-                onChange={(e) => setFormData({...formData, nickname: e.target.value})}
+                value={formData.username}
+                onChange={(e) => setFormData({...formData, username: e.target.value})}
               />
               <div className="sub-text">*아이디</div>
               <input
                 type="text"
                 placeholder="아이디를 입력해주세요."
-                value={formData.username}
-                onChange={(e) => setFormData({...formData, username: e.target.value})}
+                value={formData.userid}
+                onChange={(e) => setFormData({...formData, userid: e.target.value})}
               />
               <div className="flex-row">
                 <div className="flex-column">
@@ -97,8 +101,8 @@ const SignUp = () => {
                   <input
                     type="password"
                     placeholder="비밀번호를 입력해주세요."
-                    value={formData.password}
-                    onChange={(e) => setFormData({...formData, password: e.target.value})}
+                    value={formData.userpassword}
+                    onChange={(e) => setFormData({...formData, userpassword: e.target.value})}
                   />
                 </div>
                 <div className="flex-column">
@@ -112,15 +116,15 @@ const SignUp = () => {
                 </div>
               </div>
               <button
-                className={`next-button ${formData.nickname && formData.username && formData.password && formData.confirmPassword ? 'next-active' : ''}`}
+                className={`next-button ${formData.username && formData.userid && formData.userpassword && formData.confirmPassword ? 'next-active' : ''}`}
                 onClick={() => {
-                  if (!formData.password || formData.password !== formData.confirmPassword) {
+                  if (!formData.userpassword || formData.userpassword !== formData.confirmPassword) {
                     console.log("Password and Confirm Password do not match!");
                     return;
                   }
                   handleNextPage();
                 }}
-                disabled={!formData.nickname || !formData.username || !formData.password || !formData.confirmPassword}
+                disabled={!formData.username || !formData.userid || !formData.userpassword || !formData.confirmPassword}
               >
                 Next
               </button>
@@ -161,8 +165,8 @@ const SignUp = () => {
                         type="radio"
                         name="gender"
                         value="남성"
-                        checked={formData.gender === '남성'}
-                        onChange={(e) => setFormData({...formData, gender: e.target.value})}
+                        checked={formData.usergender === '남성'}
+                        onChange={(e) => setFormData({...formData, usergender: e.target.value})}
                       />
                       남성
                     </label>
@@ -171,8 +175,8 @@ const SignUp = () => {
                         type="radio"
                         name="gender"
                         value="여성"
-                        checked={formData.gender === '여성'}
-                        onChange={(e) => setFormData({...formData, gender: e.target.value})}
+                        checked={formData.usergender === '여성'}
+                        onChange={(e) => setFormData({...formData, usergender: e.target.value})}
                       />
                       여성
                     </label>
@@ -186,8 +190,8 @@ const SignUp = () => {
                         type="radio"
                         name="citizenship"
                         value="내국인"
-                        checked={formData.citizenship === '내국인'}
-                        onChange={(e) => setFormData({...formData, citizenship: e.target.value})}
+                        checked={formData.userlocal === '내국인'}
+                        onChange={(e) => setFormData({...formData, userlocal: e.target.value})}
                       />
                       내국인
                     </label>
@@ -196,8 +200,8 @@ const SignUp = () => {
                         type="radio"
                         name="citizenship"
                         value="외국인"
-                        checked={formData.citizenship === '외국인'}
-                        onChange={(e) => setFormData({...formData, citizenship: e.target.value})}
+                        checked={formData.userlocal === '외국인'}
+                        onChange={(e) => setFormData({...formData, userlocal: e.target.value})}
                       />
                       외국인
                     </label>
@@ -208,8 +212,8 @@ const SignUp = () => {
               <input
                 type="email"
                 placeholder="이메일을 입력해주세요."
-                value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
+                value={formData.useremail}
+                onChange={(e) => setFormData({...formData, useremail: e.target.value})}
               />
               <div className="sub-text">지역</div>
               <div className="location-container">
@@ -222,8 +226,8 @@ const SignUp = () => {
                 <input
                   type="text"
                   placeholder="구"
-                  value={formData.district}
-                  onChange={(e) => setFormData({...formData, district: e.target.value})}
+                  value={formData.userregion}
+                  onChange={(e) => setFormData({...formData, userregion: e.target.value})}
                 />
                 <input
                   type="text"
@@ -232,7 +236,11 @@ const SignUp = () => {
                   onChange={(e) => setFormData({...formData, neighborhood: e.target.value})}
                 />
               </div>
-              <button className="next-button" onClick={handleNextPage}>
+
+              <button
+                className={`next-button ${formData.usergender && formData.userlocal && formData.useremail && formData.userregion ? 'next-active' : ''}`}
+                onClick={handleNextPage}>
+
                 Next
               </button>
             </div>
@@ -296,9 +304,11 @@ const SignUp = () => {
                   부동산
                 </label>
               </div>
-              <button className="next-button" onClick={
-                () => window.location.href = '/Newsletter'
-              }
+              <button
+                className={`next-button ${formData.interest ? 'next-active' : ''}`}
+                      onClick={() => {
+                        handleSubmit();
+                      }}
               >
                 Submit
               < /button>
