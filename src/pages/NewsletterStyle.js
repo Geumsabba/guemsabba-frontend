@@ -37,6 +37,12 @@ export const NewsLetterWrapper  = styled.div.attrs(props => ({
   //&.show {
   //  opacity: 1;
   //}
+
+  &:hover {
+    transform: scale(1.1);
+    transform-origin: center center;
+    transition: all 0.2s ease-in-out;
+  }
 `;
 
 
@@ -55,15 +61,38 @@ export const NewsLetterImg = styled.img`
   outline: none;
   transition: all 0.2s ease-in-out;
 
+  opacity: 1;
+`;
+
+
+export const NewsLetterOverlay = styled.div`
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 267px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #7895CB;
+  color: #fff;
+  font-size: 40px;
+  font-family: 'SCoreDream';
+
   &:hover {
-    transform: scale(1.1);
+    opacity :0.93; }
+  
+  &:hover .overlay {
+      opacity: 1;
   }
 `;
+
 
 //Newslettertext 
 export const NewsLetterTitle = styled.div`
   color: #26231D;
-  font-family: S-Core Dream;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -71,10 +100,13 @@ export const NewsLetterTitle = styled.div`
   color: var(--ui-dark, #222);
   font-size: 32px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 36px; /* 112.5% */
   margin-top: 24px;
+  font-family: 'BMJua';
 `;
+
+
 
 export const NewsLetterContent = styled.div`
   font-style: normal;
@@ -91,10 +123,10 @@ export const NewsLetterContent = styled.div`
 export const NewsLetterWriter = styled.div`
   margin-top: 16px;
   color: #6941C6;
-  font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: 20px; 
+  font-family: 'BMJua';
 `;
 

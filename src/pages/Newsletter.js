@@ -15,7 +15,8 @@ import {
   NewsLetterContent,
   OneRowContainer,
   ThreeColContainer,
-  NewsLetterWriter
+  NewsLetterWriter,
+  NewsLetterOverlay,
 } from "./NewsletterStyle";
 
 
@@ -28,6 +29,7 @@ import placeholder6 from "../img/placeholder6.png"
 
 
 function Newsletter() {
+
   const [inputValue, setInputValue] = useState('');
   const [data, setData] = useState([]);
 
@@ -150,7 +152,9 @@ function Newsletter() {
                     <NewsLetterWrapper key={index}>
                       <Link to="/NewsletterContents">
                         <NewsLetterImg src={`data:image/png;base64,${item.image1}`}/>
+                        <NewsLetterOverlay className="overlay">view more !</NewsLetterOverlay>
                       </Link>
+                      <link href="https://webfontworld.github.io/woowahan/BMJua.css" rel="stylesheet"/>
                       <NewsLetterTitle>{item.title}</NewsLetterTitle>
                       <NewsLetterWriter>edit: {item.editor}</NewsLetterWriter>
                       <NewsLetterContent>{item.header}</NewsLetterContent>
@@ -165,6 +169,7 @@ function Newsletter() {
                     <NewsLetterWrapper key={index}>
                       <Link to="/NewsletterContents">
                         <NewsLetterImg src={`data:image/png;base64,${item.image1}`}/>
+                        <NewsLetterOverlay className="overlay">view more !</NewsLetterOverlay>
                       </Link>
                       <NewsLetterTitle>{item.title}</NewsLetterTitle>
                       <NewsLetterWriter>edit: {item.editor}</NewsLetterWriter>
@@ -180,6 +185,7 @@ function Newsletter() {
                     <NewsLetterWrapper key={index}>
                       <Link to="/NewsletterContents">
                         <NewsLetterImg src={`data:image/png;base64,${item.image1}`}/>
+                        <NewsLetterOverlay className="overlay">view more !</NewsLetterOverlay>
                       </Link>
                       <NewsLetterTitle>{item.title}</NewsLetterTitle>
                       <NewsLetterWriter>edit: {item.editor}</NewsLetterWriter>

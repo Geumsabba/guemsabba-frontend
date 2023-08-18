@@ -2,6 +2,7 @@ import React, { useState }  from 'react';
 import { Link } from 'react-router-dom';
 import './NavbarMain.css';
 import logo_white from './logo_white.png';
+import Group567 from './Group567.png';
 import Dropdown from './Dropdown';
 import Dropdown2 from './Dropdown2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -17,7 +18,7 @@ const NavbarMain = () => {
 
   const [ inputValue, setInputValue ] = useState('');
 
-  const [click, setClick] = useState(false);
+  /* const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [dropdown2, setDropdown2] = useState(false);
 
@@ -55,7 +56,7 @@ const NavbarMain = () => {
       setDropdown2(false);
     }
   };
-
+ */
 
 
 
@@ -65,42 +66,16 @@ const NavbarMain = () => {
         <button className="main-button" onClick={
           () => window.location.href = '/'
         }>
-          <div className='home'>
-            <FontAwesomeIcon icon={faHouse} className="home-icon"/></div>
         </button>   
         <button className="imgBox" onClick={
           () => window.location.href = '/'
         }>
-          <img src={logo_white} className="logo_white" alt="main logo" /></button>
+          <img src={Group567} className="Group567" alt="main logo" /></button>
         <div className='dropdown-container'> 
           <ul>
-          <li className='dropdown2'
-              onMouseEnter={onMouseEnter2}
-              onMouseLeave={onMouseLeave2}
-            >
-              <Link
-               to='#'
-               className='dropdown2'
-               onClick={closeMobileMenu}
-              >
-                맞춤형 지원금&nbsp;<FontAwesomeIcon icon={faChevronDown}/>
-              </Link>
-              {dropdown2 && <Dropdown2/>}
-            </li>
-            <li><a href="#">맞춤형 재테크&nbsp;<FontAwesomeIcon icon={faChevronDown}/></a></li>
-            <li className='dropdown'
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
-            >
-              <Link
-               to='/Newsletter'
-               className='dropdown'
-               onClick={closeMobileMenu}
-              >
-                맞춤형 금융지식&nbsp;<FontAwesomeIcon icon={faChevronDown}/>
-              </Link>
-              {dropdown && <Dropdown/>}
-            </li>
+            <li><a href="/Fund">맞춤형 지원금</a></li>
+            <li><a href="/Home">오늘의 뉴스레터</a></li>
+            <li><a href="/Newsletter">뉴스레터 모아보기</a></li>
           </ul>
         </div>
       </div>
@@ -120,7 +95,7 @@ const NavbarMain = () => {
           <button><FontAwesomeIcon icon={faCircleQuestion} className="home-icon"/></button>
           <button><FontAwesomeIcon icon={faGear} className="home-icon"/></button></div>
         <div className='mypage'>
-        <ul><li><a href="#">마이페이지</a></li></ul></div>
+        <ul><li><a href="#">로그아웃</a></li></ul></div>
       </div>
     </nav>
   );

@@ -6,6 +6,8 @@ import landinglogo1 from './landinglogo1.png';
 import landinglogo2 from './landinglogo2.png';
 import landinglogo3 from './landinglogo3.png';
 import landinglogo4 from './landinglogo4.png';
+import mainlanding from './mainlanding.png';
+import Group5678 from './Group5678.png';
 /* 
 import fullpage from 'fullpage.js';
  */
@@ -87,29 +89,28 @@ useEffect(() => {
   return (
     <div className='fullpage'>
       <section className='first'>
+        <div className='small-logo'>
+          <img src={Group5678} className="Group5678" alt="Group5678"/>
+        </div>
         <header>
           <ul>
             <li><a href="/fund">맞춤형 지원금</a></li>
-            <li><a href="/home">맞춤형 재테크</a></li>
-            <li><a href='/Newsletter'>맞춤형 금융지식</a></li>
+            <li><a href="/home">오늘의 뉴스레터</a></li>
+            <li><a href='/Newsletter'>뉴스레터 모아보기</a></li>
             <li><a href="/Signup">회원가입</a></li>
           </ul>
         </header>
-        <div className="content">
+        <div className='imgBox-full'>
+        <div className="imgBox">
+          <img src={mainlanding} className="mainlanding" alt="mainlanding" />
+        </div>
+         <div className="content">
           <div className="textBox">
-            <h1>
-              <span>금</span>융정보를<br />
-              <span>사</span>회초년생들에게<br />
-              <span>빠</span>르게 찾아줄게요!
-            </h1>
-            <p>내용입력</p>
             <div className="button">
-              <a href="/login">로그인 하기</a>
+              <a href="/login">금사빠 로그인 하기</a>
             </div>
           </div>
-          <div className="imgBox">
-            <img src={mainlogo} className="guemsabba" alt="main logo" />
-          </div>
+        </div> *
         </div>
       </section>
 

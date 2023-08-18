@@ -16,9 +16,15 @@ const Navbar = () => {
         </button>
       </div>
       <div className="right-container">
-        <button>맞춤형 지원금</button>
-        <button>맞춤형 재테크</button>
-        <button>맞춤형 금융지식</button>
+        <button onClick={
+          () => window.location.href = '/Fund'
+        }>맞춤형 지원금</button>
+        <button onClick={
+          () => window.location.href = '/Home'
+        }>오늘의 뉴스레터</button>
+        <button onClick={
+          () => window.location.href = '/Newsletter'
+        }>뉴스레터 모아보기</button>
         <button onClick={
           () => window.location.href = '/Login'
         }>로그인</button>

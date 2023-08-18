@@ -39,7 +39,7 @@ import {
   KnlgContainer,
   KnlgImg,
   FlexRow,
-  NewsLetterWrapper,
+  NewsLetterWrapper, NewsLetterOverlay,
   NewsLetterImg, NewsLetterTitle, NewsLetterContent, OneRowContainer, ThreeColContainer, NewsLetterWriter, FlexRow2
 } from "./HomeStyle";
 import Newsletter from "./Newsletter";
@@ -94,6 +94,7 @@ const Home = () => {
         <BannerImg src={sitebanner}/>
         <PageDiv>
           {/*내가 구독한 에디터*/}
+          <link href="https://webfontworld.github.io/DdangFonts/TangsBudaeJjigae.css" rel="stylesheet"/>
           <BannerDiv>내가 구독한 에디터</BannerDiv>
           {/*"EditorProfile" 태그 8개 생성*/}
           <EditorProfileWrapper>
@@ -128,7 +129,9 @@ const Home = () => {
               <TitleDiv>{firstItem.title || '제목을 입력하세요'}</TitleDiv>
               <ContentDiv>{firstItem.header || '자세한 내용을 보려면 더보기를 눌러주세요!'}</ContentDiv>
               <MoreButton>
-                <MoreDivText>Read more</MoreDivText>
+                <MoreDivText onClick={
+          () => window.location.href = '/NewsletterContents'
+           }>Read more</MoreDivText>
               </MoreButton>
             </ContentContainer>
           </NewsletterContainer>
@@ -161,6 +164,7 @@ const Home = () => {
                   <NewsLetterWrapper>
                     <Link to="/NewsletterContents">
                       <NewsLetterImg src={`data:image/png;base64,${item.image1}`}/>
+                      <NewsLetterOverlay className="overlay">view more !</NewsLetterOverlay>
                     </Link>
                     <NewsLetterTitle>{item.title}</NewsLetterTitle>
                     <NewsLetterWriter>edit: {item.editor}</NewsLetterWriter>
@@ -189,7 +193,9 @@ const Home = () => {
                     <NewsLetterWrapper key={key}>
                       <Link to="/NewsletterContents">
                         <NewsLetterImg src={`data:image/png;base64,${item.image1}`}/>
+                        <NewsLetterOverlay className="overlay">view more !</NewsLetterOverlay>
                       </Link>
+                      <link href="https://webfontworld.github.io/woowahan/BMJua.css" rel="stylesheet"/>
                       <NewsLetterTitle>{item.title}</NewsLetterTitle>
                       <NewsLetterWriter>edit: {item.editor}</NewsLetterWriter>
                       <NewsLetterContent>{item.header}</NewsLetterContent>
@@ -208,6 +214,7 @@ const Home = () => {
                     <NewsLetterWrapper key={key}>
                       <Link to="/NewsletterContents">
                         <NewsLetterImg src={`data:image/png;base64,${item.image1}`}/>
+                        <NewsLetterOverlay className="overlay">view more !</NewsLetterOverlay>
                       </Link>
                       <NewsLetterTitle>{item.title}</NewsLetterTitle>
                       <NewsLetterWriter>edit: {item.editor}</NewsLetterWriter>
@@ -227,6 +234,7 @@ const Home = () => {
                     <NewsLetterWrapper key={key}>
                       <Link to="/NewsletterContents">
                         <NewsLetterImg src={`data:image/png;base64,${item.image1}`}/>
+                        <NewsLetterOverlay className="overlay">view more !</NewsLetterOverlay>
                       </Link>
                       <NewsLetterTitle>{item.title}</NewsLetterTitle>
                       <NewsLetterWriter>edit: {item.editor}</NewsLetterWriter>

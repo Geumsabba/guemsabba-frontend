@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,6 +23,7 @@
     display: flex;
     align-items: center;
     justify-content: center; /* Horizontally center the content */
+    gap: 20px;
 }
 
 /* Apply text style to buttons inside right-container */
@@ -36,6 +37,8 @@
     cursor: pointer;
     /*color: #303031;*/
     color: #303031;
+    font-family: 'NexonLv1Gothic';
+
 }
 
 .right-container button:last-child{

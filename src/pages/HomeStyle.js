@@ -35,6 +35,8 @@ export const BannerDiv = styled.div`
   color: #4A55A2;
   font-size: 20px;
   font-weight: bold;
+  font-family: 'TangsBudaeJjigae';
+                                             
 `;
 
 export const EditorProfileWrapper = styled.div`
@@ -158,11 +160,12 @@ export const ContentContainer = styled.div`
 export const TitleDiv = styled.div`
   color: black;
   font-size: 30px;
-  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 24px;
+  font-family: 'BMJua';
+  weight: 400;
 `;
 
 export const ContentDiv = styled.div`
@@ -229,6 +232,12 @@ export const KnlgContainer = styled.div`
   align-items: center;
   flex-direction: column;
   margin-top: 12px;
+
+  &:hover {
+    transform: scale(1.1);
+    transform-origin: center center;
+    transition: all 0.2s ease-in-out;
+  }
 `;
 
 export const KnlgImg = styled.img`
@@ -252,6 +261,13 @@ export const NewsLetterWrapper = styled.div`
   //align-items: center;
   flex-direction: column;
   margin-top: 12px;
+
+  &:hover {
+    transform: scale(1.1);
+    transform-origin: center center;
+    transition: all 0.2s ease-in-out;
+  }
+
 `;
 
 export const NewsLetterImg = styled.img`
@@ -268,26 +284,49 @@ export const NewsLetterImg = styled.img`
   outline: none;
   transition: all 0.2s ease-in-out;
 
+  opacity: 1;
+
+`;
+
+export const NewsLetterOverlay = styled.div`
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 267px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #7895CB;
+  color: #fff;
+  font-size: 40px;
+  font-family: 'SCoreDream';
+
   &:hover {
-    transform: scale(1.1);
+    opacity :0.93; }
+  
+  &:hover .overlay {
+      opacity: 1;
   }
 `;
 
 export const NewsLetterTitle = styled.div`
   color: #26231D;
-  font-family: Inter;
   font-size: 30px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: normal;
   color: var(--ui-dark, #222);
   font-family: Inter;
   font-size: 32px;
   font-style: normal;
-  font-weight: 700;
   line-height: 36px; /* 112.5% */
   margin-top: 24px;
+  font-family: 'BMJua';
 `;
+
 
 export const NewsLetterContent = styled.div`
   //text-align: center;
@@ -305,7 +344,7 @@ export const NewsLetterContent = styled.div`
 export const NewsLetterWriter = styled.div`
   margin-top: 16px;
   color: #6941C6;
-  font-family: Inter;
+  font-family: 'BMJua';
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
