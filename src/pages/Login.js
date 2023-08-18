@@ -31,26 +31,42 @@ const Login = () => {
   };
 
   const handleSubmit = () => {
+    console.log("Api Call start..")
     // Gather all the credentials and make the API call
-    const userData = {...formData};
+    const userData = {
+      userid: formData.userid,
+      userpassword: formData.password,
+    };
 
     // Make API call and handle signup
     // Example API call using fetch:
-    fetch('your-signup-api-url', {
+    fetch('https://101.79.9.230/geumsabba/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(userData),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.ok) {
+          // Successful response
+          console.log('Login successful'); // Specific log for successful response
+          return response.json();
+        } else {
+          // Handle error response
+          console.log('Login failed'); // Specific log for failed response
+          throw new Error('Login failed');
+        }
+      })
       .then((data) => {
         // Handle API response
-        console.log(data);
-        // Redirect to another page after successful signup
-        // For example: history.push('/dashboard');
+        console.log('API Response:', data); // Log API response
+        // Redirect to another page after successful login
+        console.log('Redirecting to /home'); // Log redirection
+        window.location.href = '/home'; // Redirect to /home
       })
       .catch((error) => {
+        // Handle error
         console.error('Error:', error);
       });
   };
@@ -80,54 +96,48 @@ const Login = () => {
               {/* <div className="section-disc">로그인 해주세요:)</div> */}
               <div className={"blank1"}></div>
               <button className='login-box'>
-              <div className="sub-text">*아이디</div>
-              <input
-                type="text"
-                placeholder="아이디를 입력해주세요."
-                value={formData.username}
-                onChange={(e) => setFormData({...formData, username: e.target.value})}
-              />
-              <div className="flex-row">
-                <div className="flex-column">
-                  <div className="sub-text">*비밀번호</div>
-                  <input
-                    type="password"
-                    style={{width: 610}}
-                    placeholder="비밀번호를 입력해주세요."
-                    value={formData.password}
-                    onChange={(e) => setFormData({...formData, password: e.target.value})}
-                  />
+                <div className="sub-text">*아이디</div>
+                <input
+                  type="text"
+                  placeholder="아이디를 입력해주세요."
+                  value={formData.userid}
+                  onChange={(e) => setFormData({...formData, userid: e.target.value})}
+                />
+                <div className="flex-row">
+                  <div className="flex-column">
+                    <div className="sub-text">*비밀번호</div>
+                    <input
+                      type="password"
+                      style={{width: 610}}
+                      placeholder="비밀번호를 입력해주세요."
+                      value={formData.password}
+                      onChange={(e) => setFormData({...formData, userpassword: e.target.value})}
+                    />
+                  </div>
                 </div>
-              </div>
-              <button
-                className={`next-button ${formData.nickname && formData.username && formData.password && formData.confirmPassword ? 'next-active' : ''}`}
-                onClick={() => {
-                  if (!formData.password || formData.password !== formData.confirmPassword) {
-                    console.log("Password and Confirm Password do not match!");
-                    return;
-                  }
-                  handleNextPage();
-                }}
-                disabled={!formData.nickname || !formData.username || !formData.password || !formData.confirmPassword}
-              >
-                로그인하기
-              </button>
-              <div className={"blank1"}></div>
-              <div className="find-text">아이디/비밀번호 찾기</div>
+                <button
+                  className={`next-button 
+                ${formData.userid && formData.password ?
+                    'next-active'
+                    : ''}`}
+                  onClick={() => {
+                    handleSubmit();
+                  }}
+                >
+                  로그인하기
+                </button>
+                <div className={"blank1"}></div>
+                <div className="find-text">아이디/비밀번호 찾기</div>
               </button>
 
               <div className={"blank1"}></div>
-              <button className='BirthDatePicker-button' 
-              onClick={
-                () => window.location.href = 'Signup'
-              }> 회원가입하기</button>
+              <button className='BirthDatePicker-button'
+                      onClick={
+                        () => window.location.href = 'Signup'
+                      }> 회원가입하기
+              </button>
             </div>
           )}
-
-
-
-
-
 
 
           {/* 기본정보 */}
@@ -164,7 +174,7 @@ const Login = () => {
                         name="gender"
                         value="남성"
                         checked={formData.gender === '남성'}
-                        onChange={(e) => setFormData({...formData, gender: e.target.value})}
+                        onChange={(e) => setFormData({...formData, usergender: e.target.value})}
                       />
                       남성
                     </label>
@@ -174,7 +184,7 @@ const Login = () => {
                         name="gender"
                         value="여성"
                         checked={formData.gender === '여성'}
-                        onChange={(e) => setFormData({...formData, gender: e.target.value})}
+                        onChange={(e) => setFormData({...formData, usergender: e.target.value})}
                       />
                       여성
                     </label>
@@ -189,7 +199,7 @@ const Login = () => {
                         name="citizenship"
                         value="내국인"
                         checked={formData.citizenship === '내국인'}
-                        onChange={(e) => setFormData({...formData, citizenship: e.target.value})}
+                        onChange={(e) => setFormData({...formData, userlocal: e.target.value})}
                       />
                       내국인
                     </label>
@@ -199,7 +209,7 @@ const Login = () => {
                         name="citizenship"
                         value="외국인"
                         checked={formData.citizenship === '외국인'}
-                        onChange={(e) => setFormData({...formData, citizenship: e.target.value})}
+                        onChange={(e) => setFormData({...formData, userlocal: e.target.value})}
                       />
                       외국인
                     </label>
@@ -211,7 +221,7 @@ const Login = () => {
                 type="email"
                 placeholder="이메일을 입력해주세요."
                 value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
+                onChange={(e) => setFormData({...formData, useremail: e.target.value})}
               />
               <div className="sub-text">지역</div>
               <div className="location-container">
@@ -225,7 +235,7 @@ const Login = () => {
                   type="text"
                   placeholder="구"
                   value={formData.district}
-                  onChange={(e) => setFormData({...formData, district: e.target.value})}
+                  onChange={(e) => setFormData({...formData, userregion: e.target.value})}
                 />
                 <input
                   type="text"
