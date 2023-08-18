@@ -60,7 +60,7 @@ const Home = () => {
   useEffect(() => {
     // Simulate fetching data from an API
     // Replace this with your actual API endpoint
-    fetch('http://101.79.9.230:8080/geumsabba/newsletter/getall')
+    fetch('https://101.79.9.230:8080/geumsabba/newsletter/getall')
     // fetch('http://localhost:8080/geumsabba/newsletter/getall')
       .then(response => response.json())
       .then(data => {

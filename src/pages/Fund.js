@@ -49,7 +49,7 @@ const FundPage = () => {
 
   useEffect(() => {
     // Fetching data from API
-    fetch('http://101.79.9.230:8080/geumsabba/supportfund/getall')
+    fetch('https://101.79.9.230:8080/geumsabba/supportfund/getall')
     // fetch('http://localhost:8080/geumsabba/supportfund/getall')
       .then(response => response.json())
       .then(data => {
